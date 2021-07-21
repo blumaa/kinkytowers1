@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/kinkytowers1/static/css/main.940dead9.chunk.css",
-    "main.js": "/kinkytowers1/static/js/main.c23c5406.chunk.js",
-    "main.js.map": "/kinkytowers1/static/js/main.c23c5406.chunk.js.map",
+    "main.css": "/kinkytowers1/static/css/main.8830aa99.chunk.css",
+    "main.js": "/kinkytowers1/static/js/main.c8e191b2.chunk.js",
+    "main.js.map": "/kinkytowers1/static/js/main.c8e191b2.chunk.js.map",
     "runtime-main.js": "/kinkytowers1/static/js/runtime-main.0e4bde20.js",
     "runtime-main.js.map": "/kinkytowers1/static/js/runtime-main.0e4bde20.js.map",
-    "static/js/2.65e8f38e.chunk.js": "/kinkytowers1/static/js/2.65e8f38e.chunk.js",
-    "static/js/2.65e8f38e.chunk.js.map": "/kinkytowers1/static/js/2.65e8f38e.chunk.js.map",
+    "static/js/2.cfea363e.chunk.js": "/kinkytowers1/static/js/2.cfea363e.chunk.js",
+    "static/js/2.cfea363e.chunk.js.map": "/kinkytowers1/static/js/2.cfea363e.chunk.js.map",
     "static/js/3.b2ccf929.chunk.js": "/kinkytowers1/static/js/3.b2ccf929.chunk.js",
     "static/js/3.b2ccf929.chunk.js.map": "/kinkytowers1/static/js/3.b2ccf929.chunk.js.map",
     "index.html": "/kinkytowers1/index.html",
-    "static/css/main.940dead9.chunk.css.map": "/kinkytowers1/static/css/main.940dead9.chunk.css.map",
-    "static/js/2.65e8f38e.chunk.js.LICENSE.txt": "/kinkytowers1/static/js/2.65e8f38e.chunk.js.LICENSE.txt",
+    "static/css/main.8830aa99.chunk.css.map": "/kinkytowers1/static/css/main.8830aa99.chunk.css.map",
+    "static/js/2.cfea363e.chunk.js.LICENSE.txt": "/kinkytowers1/static/js/2.cfea363e.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/kinkytowers1/static/media/k1.fd9efb63.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0e4bde20.js",
-    "static/js/2.65e8f38e.chunk.js",
-    "static/css/main.940dead9.chunk.css",
-    "static/js/main.c23c5406.chunk.js"
+    "static/js/2.cfea363e.chunk.js",
+    "static/css/main.8830aa99.chunk.css",
+    "static/js/main.c8e191b2.chunk.js"
   ]
 }
