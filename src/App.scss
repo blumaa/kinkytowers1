@@ -1,4 +1,196 @@
+@import './assets/stylesheets/kinkyTowers2.scss';
+
+$font-family: 'Megrim', cursive;
+*,
+*::before,
+*::after {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6vw;
+  font-family: $font-family;
+  font-style: normal;
+  // background-color:#030303;
+  color: white;
+}
 $font-stack: Bitter, serif;
+$header-color: #fff;
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+}
+
+a:hover {
+  color: pink;
+}
+
+h1 {
+  color: white;
+}
+
+.Gallery {
+  height: 100vh;
+  // border: 1px solid green;
+  // display: grid;
+  position: relative;
+  // flex-direction: row;
+  // grid-template-columns: 40% auto 40%;
+  // grid-template-rows: 98% 2%;
+}
+
+.MainFeature {
+  color: green;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  // background-color:lightcyan;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  // border: 1px solid darkred;
+  // background-image: url("./images/left.jpeg");
+}
+
+.PanelLeft {
+  // border: 1px solid red;
+  color: blue;
+  position: relative;
+  // background-color: darkgreen;
+  // overflow: scroll;
+  // z-index: 1;
+}
+
+.TitmouseFlightSvg {
+  position: absolute;
+  overflow: visible;
+  // border: 1px solid pink;
+  top: 9.75rem;
+  z-index: 100;
+}
+
+#tit-path {
+  display: none;
+}
+
+.KinkyTower1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  // border: 2px solid whtie;
+}
+
+.TitmouseBeastKiss__wrapper {
+  position: absolute;
+  // width: auto;
+  height: 100%;
+  // border: 2px solid yellow;
+  svg {
+    height: 100%;
+    width: auto;
+    // z-index: 25;
+  }
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: flex-end;
+}
+
+.PanelRight {
+  // border: 1px solid blue;
+  color: purple;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  position: relative;
+  // justify-content: center;
+  // z-index: -100;
+  &__Bg {
+    // border: 3px solid red;
+    position: absolute;
+    width: 20rem;
+    height: 100%;
+    right: 0;
+    opacity: 0.5;
+  }
+  &__MoonTop {
+    // border: 1px solid blue;
+    color: white;
+    position: relative;
+    // z-index: -100;
+    // overflow: hidden;
+    &--wrapper {
+      z-index: 100;
+      // padding-right: 1rem;
+      // border-bottom: 2px solid white;
+      // border-left: 2px solid white;
+      // width: 100%;
+      position: absolute;
+      right: 0;
+      // transform-origin: bottom right;
+      display: flex;
+      line-height: 1.6rem;
+      flex-wrap: nowrap;
+      // align-items: center;
+      // justify-content: space-evenly;
+      // bottom:0;
+      // right: 0;
+      // width: 19rem;
+      // height: auto;
+    }
+  }
+  &__Tower {
+    // color: white;
+    // overflow: visible;
+    // transform-box: fill-box;
+    // border: 1px solid white;
+    // background-color: black;
+    // background-position:absolue;
+    // display:flex;
+    // align-items:flex-end;
+    // justify-content: center;
+    position: relative;
+    &--wrapper {
+      // border: 2px solid white;
+      position: absolute;
+      transform-origin: bottom right;
+      // display:flex;
+      // align-items:flex-end;
+      bottom: 0;
+      right: 0;
+      width: 19rem;
+      height: auto;
+    }
+  }
+}
+
+.Footer {
+  // font-family: $font-stack;
+  // position: absolute;
+  // bottom: 0;
+  // left: 50%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  font-weight: 100;
+}
+
+// svg stylings
 
 .cls-1 {
   fill: #fdfcf9;
@@ -16,47 +208,54 @@ $font-stack: Bitter, serif;
   fill: #4c0d0c;
 }
 
-.Frame {
-  display: grid;
-  grid-template-rows: auto 10%;
-  // height: 100vh;
-  // position: fixed;
-}
+// .Frame {
+//   // display: grid;
+//   // grid-template-rows: auto 10%;
+//   // height: 100vh;
+//   // position: fixed;
+// }
 
-.Gallery {
-  display: grid;
-  grid-template-columns: 30% auto 30%;
-}
+// .LeftSide {
+//   // border: 1px solid blue;
+//  // background-image: url("/src/images/left.jpeg");
+//   // background-size: 100% 100%;
+//   background-repeat: no-repeat;
+//   color: $header-color;
+//   font-family: $font-stack;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-weight: 600;
+//   font-size: 5rem;
+// }
 
-.Side {
-  // border: 1px solid green;
-  font-family: $font-stack;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
+// .RightSide {
+//   // border: 1px solid orange;
+// //  background-image: url("/src/images/right.jpeg");
+//   // background-size: 100% 100%;
+//   background-repeat: no-repeat;
+//   color: $header-color;
+//   font-family: $font-stack;
+//   display: flex;
+//   align-items: center;
+//   justify-content: right;
+//   font-weight: 600;
+//   font-size: 5rem;
+//   text-align: right;
+// }
 
-.TitMouseBeastKiss {
-  // border: 1px solid red;
-  display: flex;
-  justify-content: center;
-  // grid-template-rows: 10%;
-  svg {
-    height: calc(100vh / 1.12);
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // height: 100%;
-    // width: 100%;
-  }
-}
-
-.Footer {
-  font-family: $font-stack;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.5rem;
-  font-weight: 100;
-}
+// .TitMouseBeastKiss {
+//   // border: 1px solid red;
+//   display: flex;
+//   justify-content: center;
+//   // grid-template-rows: 10%;
+//   svg {
+//     // border: 1px solid green;
+//     // height: calc(100vh / 1.12);
+//     // position: fixed;
+//     // top: 0;
+//     // left: 0;
+//     // height: 100%;
+//     // width: 100%;
+//   }
+// }

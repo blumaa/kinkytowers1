@@ -30,6 +30,36 @@ const TitmouseBeastKiss = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 740 2058"
     >
+      <motion.g
+        drag
+        dragConstraints={{
+          top: -400,
+          left: -400,
+          right: 400,
+          bottom: 400,
+        }}
+      >
+        <motion.path
+          // initial={{ pathLength: 0 }}
+          animate={{ x: [0, 10, -10, 0] }}
+          transition={{
+            duration: 5,
+            ease: "easeOut",
+            repeatType: "reverse",
+            repeat: "Infinity",
+          }}
+          //   className="cls-2"
+          style={{
+            cursor: "pointer",
+            fill: "none",
+            stroke: "#171513",
+            strokeWidth: "7px",
+          }}
+          id="heart"
+          d="M392.3,629.06c-.43-.47-1.4-1.1-1.71-2-2.08-5.72-7.39-7.21-12.15-9.31A20.16,20.16,0,0,1,368.7,609c-3.31-5.95-2.86-8.35,3.14-14.88a32.66,32.66,0,0,1,25.9,7.44c5.7-7.14,12.29-13,23.48-10.6a8.56,8.56,0,0,1,3,6.48c-5.25,6.06-9.09,13.83-15.24,19.9a89.52,89.52,0,0,0-7.33,8.12C399.39,628.33,396.72,630.51,392.3,629.06Zm-3.79-18.49c-2.14-4.93-4.84-6.2-8.79-4.56C382.5,607.46,384.58,609.91,388.51,610.57Z"
+          transform="translate(0 0)"
+        />
+      </motion.g>
       <g>
         <path
           className="cls-2"
@@ -37,21 +67,22 @@ const TitmouseBeastKiss = () => {
           transform="translate(0 0)"
         />
         <motion.path
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1, color: "#c43832" }}
+          initial={{ pathLength: 0, fill: "#171513"}}
+          animate={{ pathLength: 1, fill: "none" }}
           transition={{
-            type: "spring",
-            bounce: 0.9,
-            damping: 300,
-            mass: 35,
+            duration: 10,
+            // type: "spring",
+            // bounce: 0.9,
+            // damping: 300,
+            // mass: 15,
             ease: "easeOut",
-            repeatType: "mirror",
-            repeat: 2,
-            repeatDelay: 1,
+            repeatType: "loop",
+            repeat: "Infinity",
+            // repeatDelay: 1,
           }}
           strokeDasharray="0 1"
           style={{
-            fill: "#171513",
+            // fill: "none",
             stroke: "#171513",
             strokeWidth: "3",
           }}
@@ -63,36 +94,6 @@ const TitmouseBeastKiss = () => {
           d="M410.38,884c1.53,2.38,1.16,5,1,7.63l-2.78,4c-1.29-.11-2.62-.58-3.85.54a28.53,28.53,0,0,0-2,6c-1.8,8-2.09,16.32-4,24.35-.6,2.53-1.5,5.11-1,7.82.35,1-.12,1.75-.61,2.67-2.17,4.13-4.63,8.16-5.45,13a8.33,8.33,0,0,1,2.23,6.38,19.8,19.8,0,0,0-.43,2.4c-.5,7.1-2.56,8.69-9.81,7.53-1.91-1-1.22-3.76-3.57-4.47,1.73-5-1.49-8.79-1.86-13.13l2.27-.29c-1.68-4.29,4.46-8.17.53-12.35-1.75-.41-2.36,1.2-3.61,1-1.59-.52-1.62-2.4-3-3.3-.32-10.43-1.5-21,.15-31.35,1.47-9.13,2.54-18.54,6.5-27.15.13,1.53.27,3,.39,4.43,2.71-2.2,1.93-6.14,4.29-8.65s2.81-6.29,4.78-9.16c3.1-4.53,3.95-9.37,1.65-14.55-.14-2.2,2-2.78,3-4.24,1.78-.19,3.06,1.09,4.46,1.43a59.11,59.11,0,0,1,4.06,5.26c.82,1.34,1.6.65,2.48.42,1.88,1.08,1.64,3,1.88,4.75-.52.37-1.23.5-1.44,1.24-2,7.28-1.91,14.76-2.4,22,1.91,2.72,3.6,5.14,5.35,7.65A1.87,1.87,0,0,1,410.38,884Zm-22.61,5.27c-7.34,9.41-8.1,20.65-8.95,31.86C385.07,911.48,386.93,900.54,387.77,889.29Z"
           transform="translate(0 0)"
         />
-        <motion.g
-          drag
-          dragConstraints={{
-            top: -100,
-            left: -100,
-            right: 100,
-            bottom: 100,
-          }}
-        >
-          <motion.path
-            // initial={{ pathLength: 0 }}
-            animate={{ x: [0, 10, -10, 0] }}
-            transition={{
-              duration: 5,
-              ease: "easeOut",
-              repeatType: "reverse",
-              repeat: "Infinity",
-            }}
-            //   className="cls-2"
-            style={{
-              cursor: "pointer",
-              fill: "none",
-              stroke: "#171513",
-              strokeWidth: "7px",
-            }}
-            id="heart"
-            d="M392.3,629.06c-.43-.47-1.4-1.1-1.71-2-2.08-5.72-7.39-7.21-12.15-9.31A20.16,20.16,0,0,1,368.7,609c-3.31-5.95-2.86-8.35,3.14-14.88a32.66,32.66,0,0,1,25.9,7.44c5.7-7.14,12.29-13,23.48-10.6a8.56,8.56,0,0,1,3,6.48c-5.25,6.06-9.09,13.83-15.24,19.9a89.52,89.52,0,0,0-7.33,8.12C399.39,628.33,396.72,630.51,392.3,629.06Zm-3.79-18.49c-2.14-4.93-4.84-6.2-8.79-4.56C382.5,607.46,384.58,609.91,388.51,610.57Z"
-            transform="translate(0 0)"
-          />
-        </motion.g>
         <motion.g initial="hidden" animate="visible" variants={list}>
           <g>
             <motion.path
