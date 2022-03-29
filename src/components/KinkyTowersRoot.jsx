@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import '../assets/stylesheets/_default.scss'
-import KinkyTowers1 from '../routes/KinkyTowers1'
+import BubblingTowerAndMoon from '../scenes/BubblingTowerAndMoon/index'
 import KinkyTower1 from '../routes/KinkyTower1'
 import KinkyTower2 from '../routes/KinkyTower2'
 // import KinkyTowers1 from './routes/KinkyTowers1'
@@ -20,7 +20,7 @@ function KinkyTowersRoot() {
             <Route path='kinkytower-1' element={<KinkyTower1 />} />
             <Route path='titmouse-flight' element={<TitmouseFlight />} />
             <Route path='kinkytower-2' element={<KinkyTower2 />} />
-            <Route path='kinkytowers-1' element={<KinkyTowers1 />} />
+            <Route path='kinkytowers-1' element={<BubblingTowerAndMoon />} />
             <Route
               path='*'
               element={
