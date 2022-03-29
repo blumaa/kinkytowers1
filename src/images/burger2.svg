@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <g id="bottomLine">
+    <path d="M900,400H100a100,100,0,0,0,0,200H900a100,100,0,0,0,0-200Z"/>
+  </g>
+  <g id="centerLine">
+    <path d="M900,800H100a100,100,0,0,0,0,200H900a100,100,0,0,0,0-200Z"/>
+  </g>
+  <g id="topLine">
+    <path d="M900,0H100a100,100,0,0,0,0,200H900A100,100,0,0,0,900,0Z"/>
+  </g>
+</svg>

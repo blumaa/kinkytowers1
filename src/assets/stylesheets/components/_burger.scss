@@ -1,0 +1,16 @@
+.Burger{
+
+  /* overflow: visible; */
+  position:relative;
+  cursor: pointer;
+  svg{
+  overflow: visible;
+    z-index:30;
+    top: .5rem;
+    left: .5rem;
+    position: absolute;
+    height: 1rem;
+    /* border: 1px solid pink; */
+  
+  }
+}

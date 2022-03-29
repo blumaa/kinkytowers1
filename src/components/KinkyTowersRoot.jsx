@@ -6,6 +6,7 @@ import KinkyTower1 from '../routes/KinkyTower1'
 import KinkyTower2 from '../routes/KinkyTower2'
 // import KinkyTowers1 from './routes/KinkyTowers1'
 import TitmouseFlight from '../routes/TitmouseFlight'
+import Theatre from  '../components/theatre/index.js'
 import PageLayout from './PageLayout'
 
 function KinkyTowersRoot() {
@@ -18,6 +19,7 @@ function KinkyTowersRoot() {
           <Route path='titmouse-flight' element={<TitmouseFlight />} />
           <Route path='kinkytower-2' element={<KinkyTower2 />} />
           <Route path='kinkytowers-1' element={<KinkyTowers1 />} />
+          <Route path='theatre' element={<Theatre />} />
           <Route
             path='*'
             element={
