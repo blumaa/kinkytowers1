@@ -1,0 +1,13 @@
+.TowerScene{
+  /* position: relative; */
+  /* width: 100%; */
+  /* height: 100vh; */
+  /* border: 1px solid green; */
+  display:flex;
+  /* justify-content:center; */
+  &__tower {
+    position: absolute;
+    right: 0;
+    width: 9rem;
+  }
+}

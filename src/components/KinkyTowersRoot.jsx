@@ -13,22 +13,24 @@ function KinkyTowersRoot() {
   return (
     <Router>
       <PageLayout>
-        <Routes>
-          <Route path='/' element={<div>top</div>} />
-          <Route path='kinkytower-1' element={<KinkyTower1 />} />
-          <Route path='titmouse-flight' element={<TitmouseFlight />} />
-          <Route path='kinkytower-2' element={<KinkyTower2 />} />
-          <Route path='kinkytowers-1' element={<KinkyTowers1 />} />
-          <Route path='theatre' element={<Theatre />} />
-          <Route
-            path='*'
-            element={
-              <main style={{ padding: '1rem' }}>
-                <p>The Tower has fallen!</p>
-              </main>
-            }
-          />
-        </Routes>
+        <Theatre>
+          {/* choose a show */}
+          <Routes>
+            <Route path='/' element={<div>top</div>} />
+            <Route path='kinkytower-1' element={<KinkyTower1 />} />
+            <Route path='titmouse-flight' element={<TitmouseFlight />} />
+            <Route path='kinkytower-2' element={<KinkyTower2 />} />
+            <Route path='kinkytowers-1' element={<KinkyTowers1 />} />
+            <Route
+              path='*'
+              element={
+                <main style={{ padding: '1rem' }}>
+                  <p>The Tower has fallen!</p>
+                </main>
+              }
+            />
+          </Routes>
+        </Theatre>
       </PageLayout>
     </Router>
   )

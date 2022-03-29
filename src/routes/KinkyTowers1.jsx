@@ -110,8 +110,9 @@ const KinkyTowers1 = () => {
 
 
     return (
+    <div className="TowerScene">
         <svg
-            id="kinkytower"
+            className="TowerScene__tower"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 679 908.3"
         >
@@ -13193,6 +13194,7 @@ const KinkyTowers1 = () => {
                 </g>
             </g>
         </svg>
+    </div>
     )
 }
 

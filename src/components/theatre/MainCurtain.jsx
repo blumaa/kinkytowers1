@@ -2,19 +2,20 @@ import React from 'react'
 import Curtain from '../../images/closed-curtains.gif'
 import { motion } from 'framer-motion'
 
-const MainCurtain = ( {children} ) => {
-  const [ isCurtainOpen, setIsCurtainOpen ] = React.useState(false)
+const MainCurtain = () => {
+  const [isCurtainOpen, setIsCurtainOpen] = React.useState(true)
   return (
-    <div className='MainCurtainWrapper'>
-      <motion.img 
+      <motion.img
         animate={{
-          y: isCurtainOpen ? -900 : 0
+          y: isCurtainOpen ? -700 : 0,
         }}
-        transition={{ ease: "easeOut", duration: 5}}
-        onClick={()=>setIsCurtainOpen(!isCurtainOpen)} className="MainCurtain" src={Curtain} alt="curtain" />
-      {children}
-   </div>
+        transition={{ ease: 'easeOut', duration: 5 }}
+        onClick={() => setIsCurtainOpen(!isCurtainOpen)}
+        className='Theatre__main-curtain'
+        src={Curtain}
+        alt='curtain'
+      />
   )
 }
 
-export default MainCurtain 
+export default MainCurtain
