@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Footer from './shared/Footer'
 import Header from './shared/Header'
 
-const PageLayout = ({ children }) => {
+const PageLayout = ({ children, setIsLoading }) => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
   return (
     <div className='Layout'>
@@ -17,7 +17,7 @@ const PageLayout = ({ children }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
           >
-            <Drawer setIsDrawerOpen={setIsDrawerOpen} />
+            <Drawer setIsDrawerOpen={setIsDrawerOpen} setIsLoading={setIsLoading} />
           </motion.div>
         )}
       </AnimatePresence>

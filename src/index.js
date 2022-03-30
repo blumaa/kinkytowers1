@@ -1,10 +1,18 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { render } from 'react-dom'
 
 render(
-    <App />,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 )
 

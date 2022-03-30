@@ -113,7 +113,7 @@ const KinkyTowers1 = () => {
         <svg
             className="TowerScene__tower"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 679 508.3"
+            viewBox="0 0 679 808.3"
         >
             <title>kinky_tower</title>
             <g id="buildingsidelines">

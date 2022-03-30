@@ -3,12 +3,13 @@ import CurtainLeft from '../../images/curtain-left.png'
 import CurtainRight from '../../images/curtain-right.png'
 import MainCurtain from './MainCurtain'
 
-const Theatre = ({ children }) => {
+const Theatre = ({ children, isLoading, setIsLoading }) => {
+  // console.log('theatre isLoading', isLoading)
   return (
     <div className='Theatre'>
       <div className='Theatre__stage'>
         <img className='Theatre__curtain-left'src={CurtainLeft} alt='fireSpot' />
-        <MainCurtain />
+        <MainCurtain isLoading={isLoading} setIsLoading={setIsLoading} />
         <div className="Theatre__show">
           {children}
         </div>

@@ -11,6 +11,7 @@
     z-index: 3;
   }
   &__show{
+    /* border: 3px solid blue; */
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -21,7 +22,7 @@
   &__main-curtain{
     align-self: center;
     /* border: 2px solid yellow; */
-    opacity: .9;
+    opacity: .95;
     /* display: none; */
     width: 100vw;
     height: 100vh;
