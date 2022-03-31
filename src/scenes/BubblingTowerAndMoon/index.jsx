@@ -18,10 +18,10 @@ const BubblingTowerAndMoon = () => {
         default: { duration: 2 },
       }}
     >
-      <div className='TowerScene__one'>
+      <div className='TowerScene__beast'>
         <LittleBeast />
       </div>
-      <div className='TowerScene__two'>
+      <div className='TowerScene__tit'>
         <LittleTitmouse />
       </div>
       <div className='TowerScene__three'>

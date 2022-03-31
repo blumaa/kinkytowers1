@@ -10,6 +10,7 @@ import '../assets/stylesheets/_default.scss'
 import BubblingTowerAndMoon from '../scenes/BubblingTowerAndMoon/index'
 import KinkyTower1 from '../routes/KinkyTower1'
 import KinkyTower2 from '../routes/KinkyTower2'
+import { Welcome } from '../scenes/Welcome/index'
 // import KinkyTowers1 from './routes/KinkyTowers1'
 import TitmouseFlight from '../routes/TitmouseFlight'
 import Theatre from '../components/theatre/index.js'
@@ -57,7 +58,7 @@ function KinkyTowersRoot() {
         <AnimatePresence exitBeforeEnter>
           <Routes location={location} key={location.pathname}>
             {/* choose a show */}
-            <Route path='/' element={<div>top</div>} />
+            <Route path='/' element={<Welcome />} />
             <Route path='kinkytower-1' element={<KinkyTower1 />} />
             <Route path='titmouse-flight' element={<TitmouseFlight />} />
             <Route
