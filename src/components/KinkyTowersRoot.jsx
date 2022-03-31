@@ -11,6 +11,7 @@ import BubblingTowerAndMoon from '../scenes/BubblingTowerAndMoon/index'
 import KinkyTower1 from '../routes/KinkyTower1'
 import KinkyTower2 from '../routes/KinkyTower2'
 import { Welcome } from '../scenes/Welcome/index'
+import { EvilBeast } from '../scenes/EvilBeast/index'
 // import KinkyTowers1 from './routes/KinkyTowers1'
 import TitmouseFlight from '../routes/TitmouseFlight'
 import Theatre from '../components/theatre/index.js'
@@ -68,6 +69,10 @@ function KinkyTowersRoot() {
             <Route
               path='kinkytowers-1'
               element={<BubblingTowerAndMoon />}
+            />
+            <Route
+              path='evil-beast'
+              element={<EvilBeast />}
             />
             <Route
               path='*'

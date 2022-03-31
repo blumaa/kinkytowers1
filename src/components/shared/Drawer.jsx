@@ -9,6 +9,7 @@ const Drawer = ({ setIsDrawerOpen, setIsloading }) => {
       <Link to='/kinkytower-2'>KinkyTower2</Link>
       <Link to='/titmouse-flight'>Titmouse Flight</Link>
       <Link to='/kinkytowers-1'>Kinky Towers 1</Link>
+      <Link to='/evil-beast'>Evil Beast</Link>
     </div>
   )
 }
