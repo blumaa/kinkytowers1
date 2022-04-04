@@ -1,5 +1,5 @@
 import React from 'react'
-import TitmouseBeastKiss from '../images/TitmouseBeastKiss'
+import TitmouseBeastKiss from './TitmouseBeastKiss'
 
 const KinkyTower1 = () => {
     return(

@@ -21,8 +21,24 @@ const LittleTitmouse = () => {
   const rightLeg = React.useRef(null)
   const upperBody = React.useRef(null)
   const titPathRef = React.useRef(null)
+  const tm = React.useRef(null)
+  const wing = React.useRef(null)
+  const eye = React.useRef(null)
+  const blackEye = React.useRef(null)
 
   React.useEffect(() => {
+    gsap.to(eye.current, {
+      duration: 1,
+      'clip-path': 'circle(150% at bottom)',
+      repeat: -1,
+      yoyo: true,
+      transformOrigin: 'top center',
+      repeatDelay: 0,
+    })
+    // gsap.to(blackEye.current, {duration: .9, repeat: -1, scale: .1, yoyo: true, ease: "power3.out", transformOrigin: "top center"  })
+  }, [])
+  React.useEffect(() => {
+    // gsap.to(tm.current, { scale: 1.1, repeat: -1, yoyo: true, duration: .2})
     // gsap.to('.LittleTitmouse', {duration: 10, motionPath: titPathRef.current})
     // gsap.to('.LittleTitmouse', {duration: 10, motionPath: "#tit-path"})
   }, [])
@@ -116,6 +132,7 @@ const LittleTitmouse = () => {
   return (
     <>
       <svg
+        ref={tm}
         className='LittleTitmouse'
         id='Layer_1'
         data-name='Layer 1'
@@ -135,6 +152,7 @@ const LittleTitmouse = () => {
             fill='white'
           />
           <path
+            ref={wing}
             d='M96.55,176.31l4.41,19,11.1,11.22.84.57-.76.31c.16.46.31.92.46,1.39,9.86,2.45,19.67,5.15,29.61,7.22,3.88.81,8.08.49,12.07.06,1.62-.18,3-2.25,4.61-3.1,4-2,7.89-4.87,12.13-5.6,10-1.7,10.77-9.62,12.18-16.81a73.11,73.11,0,0,0,.86-17.25c-.07-1.72-2.66-3.33-4.1-5-1.55,1.36-4.1,2.49-4.47,4.12-1.54,6.9-1.72,14.17-3.76,20.88-2.36,7.79-8.69,12.51-16.79,12-8.87-.6-17.55-3.55-26.42-4.46-11.7-1.2-16.18-10.57-21.86-18.37-1.56-2.14-.29-6.34-.33-9.59-.11-9.5-.12-9.5-8.43-6.38Z'
             transform='translate(-11 -15.74)'
             fill='white'
@@ -145,11 +163,19 @@ const LittleTitmouse = () => {
             fill='white'
           />
           <path
+            ref={eye}
             id='eye'
             d='M189.72,123c-.32,7,5,13,10.39,13,7.22,0,7.27-5.72,7.76-10.6.64-6.47-3.81-11-11.17-11C190.38,114.48,190.07,119.64,189.72,123Z'
             transform='translate(-11 -15.74)'
             fill='white'
           />
+          {/* <path */}
+          {/*   ref={blackEye} */}
+          {/*   id='blackEye' */}
+          {/*   d='M189.72,123c-.32,7,5,13,10.39,13,7.22,0,7.27-5.72,7.76-10.6.64-6.47-3.81-11-11.17-11C190.38,114.48,190.07,119.64,189.72,123Z' */}
+          {/*   transform='translate(-11 -15.74)' */}
+          {/*   fill='black' */}
+          {/* /> */}
         </g>
         <path
           ref={rightLeg}

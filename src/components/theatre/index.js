@@ -1,6 +1,6 @@
 import React from 'react'
-import CurtainLeft from '../../images/curtain-left.png'
-import CurtainRight from '../../images/curtain-right.png'
+import CurtainLeft from '../../assets/images/curtain-left.png'
+import CurtainRight from '../../assets/images/curtain-right.png'
 import MainCurtain from './MainCurtain'
 
 const Theatre = ({ children, isLoading, setIsLoading }) => {

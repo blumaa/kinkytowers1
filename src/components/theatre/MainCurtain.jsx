@@ -1,5 +1,5 @@
 import React from 'react'
-import Curtain from '../../images/closed-curtains.gif'
+import Curtain from '../../assets/images/closed-curtains.gif'
 import { motion } from 'framer-motion'
 
 const MainCurtain = ({ isLoading, setIsLoading }) => {

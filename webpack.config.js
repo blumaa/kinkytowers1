@@ -1,62 +1,41 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  mode: 'development',
-  entry: path.join(__dirname, '/src', 'index.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, '/dist'),
+    filename: 'index.bundle.js',
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
+  devServer: {
+    port: 3000,
+    hot: true,
   },
   module: {
     rules: [
       {
-        test: /\.?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-          },
-        },
+          loader: 'babel-loader'
+        }
       },
-      {
-        test: /\.?jsx$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-          },
-        },
-      },
-      {
-        test: /\.s[ac]ss$/i,
+     {
+        test: /\.scss$/,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'sass-loader',
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '/public/icons/[name].[ext]',
-        },
-      },
-    ],
+        test: /\.(png|svg|jp?g|gif)$/i,
+        type: 'asset/resource',
+      }
+    ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public', 'index.html'),
-      favicon: './public/favicon.ico',
-      manifest: './public/manifest.json',
-    }),
-  ],
+  resolve: {
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
+      modules: ['src', 'node_modules'] // Assuming that your files are inside the src dir
+  },
+  plugins: [new MiniCssExtractPlugin()],
 }
