@@ -1,34 +1,42 @@
-$curtain-opacity: .95;
-/* $curtain-opacity: .1; */
+/* $curtain-opacity: .95; */
+$curtain-opacity: 1;
 .Theatre {
-  position: relative;
+  /* position: relative; */
   height: 100%;
   width: 100%;
   /* display: grid; */
   /* grid-template-columns: 20% 60% 20%; */
+  /* border: 3px solid blue; */
+  position: absolute;
   &__stage{
-    position:absolute;
-    /* border: 3px solid blue; */
-    width: 100vw;
+    position:relative;
+    /* border: 3px solid yellow; */
+    height: 100vh;
+    /* width: 100vw; */
     z-index: 3;
   }
   &__show{
-    /* border: 3px solid blue; */
+    /* border: 3px solid red; */
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    /* justify-content:center; */
+    /* align-items:center; */
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content:center;
-    align-items:center;
+    /* z-index:10; */
   }
   &__main-curtain{
-    align-self: center;
-    /* border: 2px solid yellow; */
+    /* border: 2px solid blue; */
     opacity: $curtain-opacity;
     /* display: none; */
-    width: 100vw;
     height: 100vh;
+    /* width: 100%; */
+    /* bottom: 0; */
+    overflow: hidden;
     position: absolute;
+    /* display: flex; */
+    /* justify-content: center; */
     /* height: 100vh; */
     /* justify-content: center; */
     z-index: 5;
@@ -48,6 +56,7 @@ $curtain-opacity: .95;
     /* border: 3px solid purple; */
     right: 0;
     height: 100vh;
+    top: 0;
     /* width: 20%; */
     position: absolute;
     z-index: 6;

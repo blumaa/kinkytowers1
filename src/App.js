@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 
-const LazyLoadedRoot = lazy(() => 
-    import('./components/KinkyTowersRoot')
+const LazyLoadedRoot = lazy(() =>
+  import('./components/KinkyTowersRoot')
 )
 
 const App = () => {

@@ -3,12 +3,14 @@ import Drawer from './shared/Drawer'
 import { motion, AnimatePresence } from 'framer-motion'
 import Footer from './shared/Footer'
 import Header from './shared/Header'
+import Burger from './shared/Burger'
 
 const PageLayout = ({ children, setIsLoading }) => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
   return (
     <div className='Layout'>
-      <Header isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+      <Burger isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+      {/* <Header isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} /> */}
       <AnimatePresence exitBeforeEnter>
         {isDrawerOpen && (
           <motion.div
