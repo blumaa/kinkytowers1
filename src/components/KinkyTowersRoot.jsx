@@ -35,7 +35,7 @@ const Transition = ({ children }) => {
       transition={{
         delay: 0,
         ease: 'easeOut',
-        duration: 2,
+        duration: .5,
       }}
     >
       {children}

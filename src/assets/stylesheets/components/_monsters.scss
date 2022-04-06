@@ -1,0 +1,11 @@
+.Monsters{
+  border: 1px solid green;
+  height: 100vh;
+  display:flex;
+  justify-content: space-around;
+  /* flex-direction:column; */
+  align-items:center;
+  img{
+    width: 10rem;
+  }
+}
