@@ -12,11 +12,13 @@ import KinkyTower2 from '../extras/KinkyTower2'
 import { Welcome } from '../scenes/Welcome/index'
 import { EvilBeast } from '../scenes/EvilBeast/index'
 import { TitmouseFlight } from '../scenes/FlyingTitmouseScene/index'
+import { HotCupOfTitTea } from '../scenes/HotCupOfTitTea/index'
 // import KinkyTowers1 from './routes/KinkyTowers1'
 // import TitmouseFlight from '../routes/TitmouseFlight'
 import Theatre from '../components/theatre/index.js'
 import PageLayout from './PageLayout'
-
+import Television from './television/Television'
+import TelevisionLayout from './television/TelevisionLayout'
 
 const LazyMonsters = lazy(() => 
     import('../components/shared/MonsterSVGs')
@@ -65,7 +67,7 @@ function KinkyTowersRoot() {
 
   return (
     <PageLayout setIsLoading={setIsLoading}>
-      <Theatre isLoading={isLoading} setIsLoading={setIsLoading}>
+      {/* <Theatre isLoading={isLoading} setIsLoading={setIsLoading}> */}
         <AnimatePresence exitBeforeEnter>
           <Routes location={location} key={location.pathname}>
             {/* choose a show */}
@@ -126,6 +128,22 @@ function KinkyTowersRoot() {
               }
             />
             <Route
+              path='hot-cup-of-tit-tea'
+              element={
+                <Transition>
+                  <HotCupOfTitTea />
+                </Transition>
+              }
+            />
+            <Route
+              path='television'
+              element={
+                <Transition>
+                  <TelevisionLayout />
+                </Transition>
+              }
+            />
+            <Route
               path='*'
               element={
                 <main style={{ padding: '1rem' }}>
@@ -135,7 +153,7 @@ function KinkyTowersRoot() {
             />
           </Routes>
         </AnimatePresence>
-      </Theatre>
+      {/* </Theatre> */}
     </PageLayout>
   )
 }

@@ -1,7 +1,10 @@
 import React from 'react'
+import BeastTitSvg from '../../assets/images/evil-beast-titmouse.svg'
 
 const EvilBeast = () => {
-  return <div className='EvilBeast'>Evil Beast</div>
+  return <div className='EvilBeast'>
+    <img src={BeastTitSvg} />
+  </div>
 }
 
 export default EvilBeast

@@ -1,5 +1,8 @@
 /* $curtain-opacity: .95; */
-$curtain-opacity: 1;
+$curtain-opacity: 0;
+
+
+
 .Theatre {
   /* position: relative; */
   height: 100%;
@@ -20,9 +23,9 @@ $curtain-opacity: 1;
     /* position: absolute; */
     width: 100%;
     height: 100%;
-    /* display: flex; */
-    /* justify-content:center; */
-    /* align-items:center; */
+    display: flex;
+    justify-content:center;
+    align-items:center;
     position: absolute;
     /* z-index:10; */
   }

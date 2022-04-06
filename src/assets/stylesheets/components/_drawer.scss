@@ -6,7 +6,9 @@
   /* width: 10rem; */
   /* padding-bottom:1rem; */
   /* padding-top:1rem; */
-  padding: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
   display:flex;
   /* justify-content:space-around; */
   flex-direction: column;
@@ -14,6 +16,7 @@
   background-color:maroon;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+  box-shadow:  10px 10px 5px 0px rgba(0,0,0,0.75);
   a {
     border-bottom: 1px solid white;
     padding-bottom: 2px;

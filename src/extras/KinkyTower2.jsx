@@ -12,7 +12,7 @@ const KinkyTower2 = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h1>KinkyTower2</h1>
+      {/* <h1>KinkyTower2</h1> */}
       {/* <div className="KinkyTower2__little-beast"> */}
       {/*     <LittleBeast /> */}
       {/* </div> */}

@@ -11,7 +11,7 @@ const PageLayout = ({ children, setIsLoading }) => {
     <div className='Layout'>
       <Burger isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       {/* <Header isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} /> */}
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         {isDrawerOpen && (
           <motion.div
             className='DrawerWrapper'
@@ -23,7 +23,9 @@ const PageLayout = ({ children, setIsLoading }) => {
           </motion.div>
         )}
       </AnimatePresence>
-      {children}
+      <div className="Layout__outside-theatre">
+        {children}
+      </div>
       {/* <Footer /> */}
     </div>
   )

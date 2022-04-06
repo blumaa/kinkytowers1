@@ -1,14 +1,18 @@
 .EvilBeast{
   /* border: 1px solid white; */
-  width: calc(100vw - 10%);
-  height: calc(100vw - 10%);
-  background-color: white;
+  /* width: calc(100vw - 10%); */
+  /* height: calc(100vw - 10%); */
+  height: 100vh;
+  /* background-color: white; */
   color: black;
   display:flex;
   justify-content:center;
   align-items:center;
-  svg {
-    width: 20rem;
+  /* svg { */
+  /*   width: 2rem; */
+  /* } */
+  img{
+    width: 40rem;
   }
 }
 	.st0{display:none;fill:#F5F4EF;}

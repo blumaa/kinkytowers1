@@ -1,0 +1,46 @@
+.TelevisionLayout{
+  /* border: 1px solid white; */
+  /* height: 100vh; */
+  &__outer {
+  /* border: 1px solid red; */
+    display: grid;
+    grid-template: 1fr / 1fr;
+    place-items: center;
+  }
+  &__outer > * {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
+  &__outer &__below-2 {
+    z-index: 0;
+    border: 3px solid green;
+    /* background-image: url('../../images/sky.jpg'); */
+  }
+  &__outer &__below {
+    z-index: 1;
+    /* border: 3px solid green; */
+    padding: 1rem;
+    /* background-image: url('../../assets/images/cosmicBg1.jpg'); */
+    background-size:cover;
+    /* background-position:center; */
+    /* background-repeat:no-repeat; */
+    svg{
+      height: 8rem;
+    }
+  }
+  &__outer &__top {
+    z-index: 2;
+    /* width: 100%; */
+    padding-left: 4.75rem;
+    /* padding-bottom: 2rem; */
+    /* border: 3px solid yellow; */
+    svg{
+    height: 90vh;
+    }
+  }
+}
+
+
+.Television {
+  display: visible;
+}

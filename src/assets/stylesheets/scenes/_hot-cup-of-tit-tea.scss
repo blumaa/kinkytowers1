@@ -1,0 +1,19 @@
+.TitTeaWrapper{
+  display: flex;
+  flex-direction:column;
+  /* justify-content:center; */
+  align-items:center;
+  /* border: 1px solid yellow; */
+}
+.HotCupOfTitTea{
+  /* border: 1px solid purple; */
+  /* height: 75%; */
+  /* width: 3rem; */
+  /* display: flex; */
+  /* justify-content:center; */
+  /* align-items: center; */
+  /* z-index:100; */
+  &__text{
+    font-size: 1.3rem;
+  }
+}

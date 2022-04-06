@@ -23,7 +23,9 @@ const Burger = ({ isDrawerOpen, setIsDrawerOpen}) => {
         initial={{ opacity: .2 }}
         whileHover={{ scale: 1.2, opacity: 1}}
         style={{ transformBox: 'fill-box', originX: "50%", originY: "50%" }}
-        id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+        id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"
+        className="Burger__svg"
+      >
           <motion.path 
             animate={{
                 scale: isDrawerOpen ? 0.8 : 1,

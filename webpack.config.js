@@ -21,23 +21,23 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-     {
+      {
         test: /\.scss$/,
         use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
-            'sass-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
-        test: /\.(png|svg|jp?g|gif)$/i,
+        test: /\.(png|svg|jpeg|gif)$/i,
         type: 'asset/resource',
-      }
+      },
     ]
   },
   resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
-      modules: ['src', 'node_modules'] // Assuming that your files are inside the src dir
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
+    modules: ['src', 'node_modules'] // Assuming that your files are inside the src dir
   },
   plugins: [new MiniCssExtractPlugin()],
 }

@@ -2,12 +2,12 @@
   /* overflow: visible; */
   position:relative;
   cursor: pointer;
-  svg{
-  overflow: visible;
-  z-index:30;
+  &__svg{
+  height: 2rem;
+  position: absolute;
+  z-index:100;
   top: .5rem;
   left: .5rem;
-  position: absolute;
-  height: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   }
 }
