@@ -30,8 +30,27 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpeg|gif)$/i,
+        test: /\.(png|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: "babel-loader"
+      //     },
+      //     {
+      //       loader: "react-svg-loader",
+      //       options: {
+      //         jsx: true // true outputs JSX tags
+      //       }
+      //     }
+      //   ]
+      // },
+      {
+        test: /\.svg$/,
+        // type: 'asset/resource',
+        use: ['@svgr/webpack'],
       },
     ]
   },

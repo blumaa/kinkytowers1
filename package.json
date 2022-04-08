@@ -24,10 +24,12 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@svgr/webpack": "^6.2.1",
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "react-svg-loader": "^3.0.3",
     "sass": "^1.49.11",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
@@ -36,8 +38,10 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "array-move": "^3.0.1",
     "framer-motion": "^6.2.8",
     "gsap": "^3.10.2",
+    "popmotion": "^11.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0"

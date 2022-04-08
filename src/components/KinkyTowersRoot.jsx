@@ -19,10 +19,14 @@ import Theatre from '../components/theatre/index.js'
 import PageLayout from './PageLayout'
 import Television from './television/Television'
 import TelevisionLayout from './television/TelevisionLayout'
+import LazyMonsterSwap from './shared/MonsterSwap/MonsterSwap'
 
 const LazyMonsters = lazy(() => 
     import('../components/shared/MonsterSVGs')
 )
+// const LazyMonsterSwap = lazy(() => 
+//     import('../components/shared/MonsterSwap/MonsterSwap')
+// )
 
 const Transition = ({ children }) => {
   return (

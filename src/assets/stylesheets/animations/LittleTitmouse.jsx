@@ -27,15 +27,29 @@ const LittleTitmouse = () => {
   const blackEye = React.useRef(null)
 
   React.useEffect(() => {
-    gsap.to(eye.current, {
-      duration: 1,
-      'clip-path': 'circle(150% at bottom)',
-      repeat: -1,
-      yoyo: true,
-      transformOrigin: 'top center',
-      repeatDelay: 0,
-    })
     // gsap.to(blackEye.current, {duration: .9, repeat: -1, scale: .1, yoyo: true, ease: "power3.out", transformOrigin: "top center"  })
+    let tl = gsap.timeline({ repeat: -1, yoyo: false, repeatDelay: 5 })
+
+
+    const blink = () => {
+      const tl = gsap.timeline()
+
+      tl.add(
+        gsap.to(eye.current, {
+          duration: .3,
+          'clip-path': 'circle(90% at bottom)',
+          repeat: 3,
+          yoyo: true,
+          ease: "power1.inOut",
+          transformOrigin: 'top center',
+          repeatDelay: 0,
+        })
+      )
+
+      return tl.play()
+    }
+
+    tl.add(blink())
   }, [])
   React.useEffect(() => {
     // gsap.to(tm.current, { scale: 1.1, repeat: -1, yoyo: true, duration: .2})
