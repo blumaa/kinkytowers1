@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import '../assets/stylesheets/_default.scss'
-import { BubblingTowerAndMoon } from '../scenes/BubblingTowerAndMoon/index'
+// import { BubblingTowerAndMoon } from '../scenes/BubblingTowerAndMoon/index'
 import KinkyTower1 from '../extras/KinkyTower1'
 import KinkyTower2 from '../extras/KinkyTower2'
 import { Welcome } from '../scenes/Welcome/index'
@@ -21,12 +21,12 @@ import Television from './television/Television'
 import TelevisionLayout from './television/TelevisionLayout'
 import LazyMonsterSwap from './shared/MonsterSwap/MonsterSwap'
 
+const LazyBubblingTowerAndMoon = lazy(() => 
+    import('../scenes/BubblingTowerAndMoon/BubblingTowerAndMoon')
+)
 const LazyMonsters = lazy(() => 
     import('../components/shared/MonsterSVGs')
 )
-// const LazyMonsterSwap = lazy(() => 
-//     import('../components/shared/MonsterSwap/MonsterSwap')
-// )
 
 const Transition = ({ children }) => {
   return (
@@ -111,7 +111,7 @@ function KinkyTowersRoot() {
               path='kinkytowers-1'
               element={
                 <Transition>
-                  <BubblingTowerAndMoon />
+                  <LazyBubblingTowerAndMoon />
                 </Transition>
               }
             />

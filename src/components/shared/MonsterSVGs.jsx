@@ -38,8 +38,14 @@ const Monsters = () => {
         <div className="Monsters__icons-wrapper">
           <Reorder.Group values={items} onReorder={setItems} axis="x">
             {items.map(item => (
-              <Reorder.Item key={item.id} value={item} drag={locked ? false : true}
-              animate={{
+              <Reorder.Item
+                key={item.id}
+
+                value={item}
+                drag={locked ? false : true}
+                // whileDrag={{ scale: 1.2 }}
+                whileHover={{scale: 1.2}}
+                animate={{
                   scale: locked ? 1 : 1.3
                 }}>
                 <motion.div className={locked ? "Monsters__item-locked" : "Monsters__item-unlocked"} >

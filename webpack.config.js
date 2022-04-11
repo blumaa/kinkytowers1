@@ -33,6 +33,14 @@ module.exports = {
         test: /\.(png|jpeg|gif)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.mp3$/,
+        loader: 'file-loader',
+        options: {
+          name: 'static/media/[name].[hash:8].[ext]'
+        }
+      },
+
       // {
       //   test: /\.svg$/,
       //   use: [

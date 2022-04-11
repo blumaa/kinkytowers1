@@ -16,7 +16,7 @@ const titmouseVariants = {
   },
 }
 
-const LittleTitmouse = () => {
+const LittleTitmouse = ({ isDraggable, towerRef, reset }) => {
   const leftLeg = React.useRef(null)
   const rightLeg = React.useRef(null)
   const upperBody = React.useRef(null)
@@ -49,109 +49,139 @@ const LittleTitmouse = () => {
       return tl.play()
     }
 
+    const titWiggle = () => {
+      const tl = gsap.timeline()
+
+      tl.add(
+        gsap.fromTo(tm.current, {
+          rotation: -5,
+        },
+          {
+            duration: .3,
+            rotation: 5,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+            transformOrigin: 'center center',
+            repeatDelay: 0,
+          })
+      )
+
+      return tl.play()
+    }
+
     tl.add(blink())
   }, [])
+  // React.useEffect(() => {
+  // gsap.to(tm.current, { scale: 1.1, repeat: -1, yoyo: true, duration: .2})
+  // gsap.to('.LittleTitmouse', {duration: 10, motionPath: titPathRef.current})
+  // gsap.to('.LittleTitmouse', {duration: 10, motionPath: "#tit-path"})
+  // }, [])
   React.useEffect(() => {
-    // gsap.to(tm.current, { scale: 1.1, repeat: -1, yoyo: true, duration: .2})
-    // gsap.to('.LittleTitmouse', {duration: 10, motionPath: titPathRef.current})
-    // gsap.to('.LittleTitmouse', {duration: 10, motionPath: "#tit-path"})
+    //       gsap.set(leftLeg.current, {transformOrigin: "top center", rotation: -20, y: -30 })
+    //       gsap.set(rightLeg.current, {transformOrigin: "top center", rotation: -20 })
+    gsap.set(upperBody.current, { transformOrigin: "center center" })
+    let titTl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+   titTl.fromTo(upperBody.current, { rotate: 0, scale: 1 }, { rotate: 25, scale: 1.1, repeat: 3, repeatDelay:.1, yoyo: true, duration: .1 })
+
+    //       gsap.set(".LittleTitmouse", {x: "-40rem"})
+    //       gsap.set('.LittleTitmouse', {transformOrigin: "center center" })
+
+    //       const tl = gsap.timeline({ repeat: 0, yoyo: false })
+
+    //       const leftLegTl = gsap.timeline({ repeat: -1, yoyo: true, paused: true })
+    //           leftLegTl.add(
+    //               gsap.fromTo(leftLeg.current, {
+    //                   rotation: -20,
+    //               }, {rotation: 50, y: -10, duration: .3, ease: 'none' })
+    //           )
+
+    //       const rightLegTl = gsap.timeline({ repeat: -1, yoyo: true, paused: true, repeatDelay: 0 })
+    //           rightLegTl.add(
+    //               gsap.fromTo(rightLeg.current, {
+    //                   rotation: 30,
+    //               }, {rotation: -20, y: -30, ease: 'none', duration: .3})
+    //           )
+
+    //       const titMouseMove1 = gsap.timeline({ repeat: 0, yoyo: false, paused: true })
+    //           titMouseMove1.add(
+    //               gsap.fromTo('.LittleTitmouse', {
+    //                   x: '-40rem',
+    //               }, {x: '0rem', y: 0, duration: 3,
+    //               ease: "power3.out"
+    //               })
+    //           )
+    //       const hop = gsap.timeline({ repeat: 1, yoyo: true, paused: true })
+    //           hop.add(
+    //               gsap.fromTo('.LittleTitmouse', {
+    //                   y: '0rem',
+    //               }, {y: '-2rem', duration: .1,
+    //               ease: "power3.out"
+    //               })
+    //           )
+    //       const titMouseMove2 = gsap.timeline({ repeat: 0, yoyo: true, paused: true })
+    //           titMouseMove2.add(
+    //               gsap.fromTo('.LittleTitmouse', {
+    //                   x: '0rem',
+    //               }, {x: '20rem', y: 0, duration: 3,
+    //               ease: "power3.out"
+    //               })
+    //           )
+
+    //       const restingTit = gsap.timeline({ repeat: -1, yoyo: true, paused: true })
+    //           restingTit.add(
+    //               gsap.to('.LittleTitmouse', {
+    //                   scale: 1.3,
+    //                   duration: 10
+    //               })
+    //           )
+
+    //       const peck = gsap.timeline({ repeat: 1, yoyo: true, paused: true })
+    //           peck.add(
+    //               gsap.to(upperBody.current, {
+    //                   rotation: 70,
+    //                   duration: .5,
+    //                   ease: 'power3.out'
+    //               })
+    //           )
+
+    //       tl.addLabel("start", 0)
+    //       tl.add(()=>rightLegTl.play(), "start")
+    //       tl.add(()=>leftLegTl.play(), "start")
+    //       tl.add(()=>titMouseMove1.play(), "start")
+    //       tl.addLabel('endOfTit', 3)
+    //       tl.add(()=>rightLegTl.pause(), 'endOfTit')
+    //       tl.add(()=>leftLegTl.pause(), 'endOfTit')
+    //       tl.add(()=>peck.play(), 'endOfTit')
+    //       tl.add(()=>hop.play(), 'endOfTit+=2')
+    //       tl.addLabel("move2", 7)
+    //       tl.add(()=>rightLegTl.play(), "move2")
+    //       tl.add(()=>leftLegTl.play(), "move2")
+    //       tl.add(()=>titMouseMove2.play(), "move2")
+    //       tl.addLabel('endOfTit2', 10)
+    //       tl.add(()=>rightLegTl.pause(), 'endOfTit2')
+    //       tl.add(()=>leftLegTl.pause(), 'endOfTit2')
+    //       tl.add(gsap.set([leftLeg.current, rightLeg.current], { rotation: 0 }))
+    //       tl.add(()=>hop.play(), 'endOfTit2+=3')
+    //       tl.play()
+
   }, [])
-  //     React.useEffect(() => {
-  //       gsap.set(leftLeg.current, {transformOrigin: "top center", rotation: -20, y: -30 })
-  //       gsap.set(rightLeg.current, {transformOrigin: "top center", rotation: -20 })
-  //       gsap.set(upperBody.current, {transformOrigin: "center bottom" })
-  //       gsap.set(".LittleTitmouse", {x: "-40rem"})
-  //       gsap.set('.LittleTitmouse', {transformOrigin: "center center" })
-
-  //       const tl = gsap.timeline({ repeat: 0, yoyo: false })
-
-  //       const leftLegTl = gsap.timeline({ repeat: -1, yoyo: true, paused: true })
-  //           leftLegTl.add(
-  //               gsap.fromTo(leftLeg.current, {
-  //                   rotation: -20,
-  //               }, {rotation: 50, y: -10, duration: .3, ease: 'none' })
-  //           )
-
-  //       const rightLegTl = gsap.timeline({ repeat: -1, yoyo: true, paused: true, repeatDelay: 0 })
-  //           rightLegTl.add(
-  //               gsap.fromTo(rightLeg.current, {
-  //                   rotation: 30,
-  //               }, {rotation: -20, y: -30, ease: 'none', duration: .3})
-  //           )
-
-  //       const titMouseMove1 = gsap.timeline({ repeat: 0, yoyo: false, paused: true })
-  //           titMouseMove1.add(
-  //               gsap.fromTo('.LittleTitmouse', {
-  //                   x: '-40rem',
-  //               }, {x: '0rem', y: 0, duration: 3,
-  //               ease: "power3.out"
-  //               })
-  //           )
-  //       const hop = gsap.timeline({ repeat: 1, yoyo: true, paused: true })
-  //           hop.add(
-  //               gsap.fromTo('.LittleTitmouse', {
-  //                   y: '0rem',
-  //               }, {y: '-2rem', duration: .1,
-  //               ease: "power3.out"
-  //               })
-  //           )
-  //       const titMouseMove2 = gsap.timeline({ repeat: 0, yoyo: true, paused: true })
-  //           titMouseMove2.add(
-  //               gsap.fromTo('.LittleTitmouse', {
-  //                   x: '0rem',
-  //               }, {x: '20rem', y: 0, duration: 3,
-  //               ease: "power3.out"
-  //               })
-  //           )
-
-  //       const restingTit = gsap.timeline({ repeat: -1, yoyo: true, paused: true })
-  //           restingTit.add(
-  //               gsap.to('.LittleTitmouse', {
-  //                   scale: 1.3,
-  //                   duration: 10
-  //               })
-  //           )
-
-  //       const peck = gsap.timeline({ repeat: 1, yoyo: true, paused: true })
-  //           peck.add(
-  //               gsap.to(upperBody.current, {
-  //                   rotation: 70,
-  //                   duration: .5,
-  //                   ease: 'power3.out'
-  //               })
-  //           )
-
-  //       tl.addLabel("start", 0)
-  //       tl.add(()=>rightLegTl.play(), "start")
-  //       tl.add(()=>leftLegTl.play(), "start")
-  //       tl.add(()=>titMouseMove1.play(), "start")
-  //       tl.addLabel('endOfTit', 3)
-  //       tl.add(()=>rightLegTl.pause(), 'endOfTit')
-  //       tl.add(()=>leftLegTl.pause(), 'endOfTit')
-  //       tl.add(()=>peck.play(), 'endOfTit')
-  //       tl.add(()=>hop.play(), 'endOfTit+=2')
-  //       tl.addLabel("move2", 7)
-  //       tl.add(()=>rightLegTl.play(), "move2")
-  //       tl.add(()=>leftLegTl.play(), "move2")
-  //       tl.add(()=>titMouseMove2.play(), "move2")
-  //       tl.addLabel('endOfTit2', 10)
-  //       tl.add(()=>rightLegTl.pause(), 'endOfTit2')
-  //       tl.add(()=>leftLegTl.pause(), 'endOfTit2')
-  //       tl.add(gsap.set([leftLeg.current, rightLeg.current], { rotation: 0 }))
-  //       tl.add(()=>hop.play(), 'endOfTit2+=3')
-  //       tl.play()
-
-  //     }, [])
 
   return (
     <>
-      <svg
+      <motion.svg
         ref={tm}
         className='LittleTitmouse'
         id='Layer_1'
         data-name='Layer 1'
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 263.85 327.44'
+        drag={isDraggable}
+        dragConstraints={towerRef}
+        whileDrag={{ scale: 1.2 }}
+        animate={{ y: (reset ? 0 : (isDraggable && -300)), originX: .5, originY: .5 }}
+        style={{ overflow: "visible", height: "100%" }}
+        transition={{ duration: 3 }}
       >
         <g ref={upperBody}>
           <path
@@ -205,7 +235,7 @@ const LittleTitmouse = () => {
           transform='translate(-11 -15.74)'
           fill='white'
         />
-      </svg>
+      </motion.svg>
       {/* <TitPath ref={titPathRef} /> */}
     </>
   )
