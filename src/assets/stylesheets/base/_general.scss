@@ -11,8 +11,8 @@ $font-family-header: 'Megrim', cursive;
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
   font-size: 1.6vw;
   /* font-family: $font-family; */
   font-family: 'Roboto', sans-serif;
@@ -97,13 +97,23 @@ body {
       /* background-color: blue; */
   /* padding: 10px; */
   height: 100%;
-  overflow: hidden;/* height: 100%; */
+  overflow: hidden;
+    /* height: 100%; */
     /* border: 1px solid yellow; */
     display: flex;
     justify-content:center;
     align-items:center;
   }
 
+.box {
+  width: 150px;
+  /* overflow: scroll; */
+  height: 150px;
+  border-radius: 1em;
+  background-color: #f9f07e;
+  margin-left: auto;
+  margin-right: auto;
+}
   /**/
   /* .cls-1 { */
   /*   fill: #fdfcf9; */

@@ -1,18 +1,27 @@
 require('file-loader?name=[name].[ext]!../dist/index.html')
 import React from 'react'
+import ReactDOM from 'react-dom/client'
 import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom'
 import App from './App'
 
-const container = document.getElementById('app');
-const root = createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById("app"));
+
 root.render(
-  <Router>
-    <App tab="home" />
-  </Router>
+    <Router>
+      <App />
+    </Router>
 );
+
+// const container = document.getElementById('app');
+// const root = createRoot(container);
+// root.render(
+//   <Router>
+//     <App tab="home" />
+//   </Router>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

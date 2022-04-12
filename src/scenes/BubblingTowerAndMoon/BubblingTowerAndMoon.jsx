@@ -1,13 +1,21 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { useAnimation, motion } from 'framer-motion'
 import KinkyTowers1 from './KinkyTowers1'
 import LittleBeast from '../../assets/stylesheets/animations/LittleBeast'
 import LittleTitmouse from '../../assets/stylesheets/animations/LittleTitmouse'
 import BellSound from '../../assets/sounds/bell-sound.mp3'
+import Bell from '../../assets/stylesheets/animations/Bell'
 
+const durationNum = 2 
+const bellVariants = {
+  visible: { opacity: 1, scale: [1.1, 0.9, 1.2, 0.8, 1.1, 0.9, 1], rotate: [20, -20, 0, 15, -15, 0, 10, -10, 0, 5, -5, 0, 2, -2, 0 ], transition: { duration: durationNum, ease: "easeOut" } },
+  initial: { opacity: 1, scale: 1, transition: { duration: durationNum } },
+};
 const BubblingTowerAndMoon = () => {
   const towerRef = React.useRef()
   const [reset, setReset] = React.useState(false)
+  const [ bellRing, setBellRing] = React.useState(false)
+  const bellControls = useAnimation();
 
   let audio = new Audio(BellSound)
 
@@ -17,10 +25,14 @@ const BubblingTowerAndMoon = () => {
 
   React.useEffect(() => {
     console.log('reset', reset)
-    setTimeout(() => {
+  reset && setTimeout(() => {
       setReset(false)
     }, 5000);
   }, [reset])
+
+  React.useEffect(() => {
+    bellRing && bellControls.start("visible") && setBellRing(false)
+  }, [bellControls, bellRing]);
 
   return (
     <div
@@ -36,17 +48,20 @@ const BubblingTowerAndMoon = () => {
     //   duration: 2,
     // }}
     >
-      <motion.div onClick={() => {
-
-        !reset && setReset(true)
-        start()
-      }
-      } className="TowerScene__reset"
+      <motion.div
+        onClick={() => {
+          !reset && setReset(true)
+          start()
+          setBellRing(true)
+        }}
+        className="TowerScene__reset-wrapper"
         whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.9 }}
+          initial="initial"
+          variants={bellVariants}
+          animate={bellControls}
+        // whileTap={{ scale: [0.9, 1.1, 0.8, 1.2, 1] }}
       >
-        Make a call from the tower!
-      {/* <button onClick={start}>Play</button> */}
+          <Bell className="TowerScene__bell" />
       </motion.div>
       <div className='TowerScene__beast'>
         <LittleBeast towerRef={towerRef} reset={reset} isDraggable={"x"} />
@@ -57,10 +72,6 @@ const BubblingTowerAndMoon = () => {
       <div className='TowerScene__three'>
         <KinkyTowers1 reset={reset} />
       </div>
-      {/* <div class="TowerScene__four">Four</div> */}
-      {/* <div class="TowerScene__five">Five</div> */}
-      {/* <div class="TowerScene__six">Six</div> */}
-      {/* <TitmouseBeastKiss /> */}
     </div>
   )
 }

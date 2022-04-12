@@ -63,7 +63,7 @@ const Television = () => {
           </g>
         </g>
         <g id="Antenna">
-          <polyline points="148.3 1.19 258.7 201.09 367 1.19" fill="none" stroke="#754c24" stroke-miterlimit="10" stroke-width="4.91" />
+          <polyline points="148.3 1.19 258.7 201.09 367 1.19" fill="none" stroke="#754c24" strokeMiterlimit="10" strokeWidth="4.91" />
           <path d="M932.6,298.3A26.69,26.69,0,0,0,905.9,325v1.5a84.18,84.18,0,0,0,27.6,4.3,86.45,86.45,0,0,0,25.6-3.6,16.2,16.2,0,0,0,.1-2.2A26.55,26.55,0,0,0,932.6,298.3Z" transform="translate(-672.8 -123.11)" fill="#333" />
         </g>
         <g id="Volume">

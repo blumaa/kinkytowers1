@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react'
 import { gsap } from 'gsap'
-import { motion } from 'framer-motion'
+import { motion, useAnimationFrame } from 'framer-motion'
 
 const KinkyTowers1 = ({ reset }) => {
   const topEave = React.useRef()
+  const moonRef = React.useRef(null)
 
+  // useAnimationFrame((t) => {
+  //   const rotate = Math.sin(t / 10000) * 200;
+  //   const y = (1 + Math.sin(t / 1000)) * -5;
+  //   moonRef.current.style.transform = `translateY(${y}px) rotateX(${rotate}deg) rotateY(${rotate}deg)`;
+  // });
 
   useEffect(() => {
     function random(min, max) {
@@ -12586,7 +12592,7 @@ const KinkyTowers1 = ({ reset }) => {
           fill="#db4f56"
         />
       </g>
-      <g id="moon">
+      <g id="moon" ref={moonRef}>
         <path
           d="M597.13,86.2c5.16,11.27,6.84,25.58,2.56,37.39A78.9,78.9,0,0,1,592.62,138c-3.67,5.9-9.81,8.59-16.29,10.36-2,.55-2.55,3.57-.6,4.57,25.73,13.23,55.14-12.71,58.68-38.15,4.08-29.32-21.81-50.5-48.72-53.11-2.33-.22-3.07,2.8-1.77,4.27,7.38,8.37,13.68,18.49,16.4,29.46.78,3.12,5.6,1.8,4.82-1.33-2.93-11.82-9.73-22.64-17.69-31.67l-1.76,4.27c23.25,2.26,45.71,19.76,44,45-1.49,22.64-28.27,48.87-51.49,36.94l-.59,4.56c6.48-1.77,13.27-4.58,17.52-10,3.81-4.88,6.59-11.23,8.85-17,5.28-13.44,3.32-29.61-2.58-42.5-1.34-2.92-5.65-.39-4.32,2.52Z"
           transform="translate(-25.49 -30.24)"

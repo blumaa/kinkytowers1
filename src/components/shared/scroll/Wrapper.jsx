@@ -9,8 +9,8 @@ const sharedStyle = {
   // textAlign: "center",
   // background: "#148bb4",
   // color: "azure",
-  overflowX: "hidden",
-  scrollbarWidth:'none',
+  // overflowX: "hidden",
+  // scrollbarWidth:'none',
 };
 
 const Wrapper = React.forwardRef(
