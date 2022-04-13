@@ -1,7 +1,8 @@
 .Burger{
   /* overflow: visible; */
-  position:relative;
+  position:fixed;
   cursor: pointer;
+  z-index:100;
   &__svg{
   height: 2rem;
   position: absolute;

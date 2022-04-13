@@ -23,11 +23,11 @@ const PageLayout = ({ children, setIsLoading }) => {
           </motion.div>
         )}
       </AnimatePresence>
-      <motion.div className="Layout__outside-theatre"
+      <motion.div 
       animate={{ opacity: isDrawerOpen ? .2 : 1}}>
         {children}
       </motion.div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

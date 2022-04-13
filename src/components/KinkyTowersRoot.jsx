@@ -20,12 +20,14 @@ import PageLayout from './PageLayout'
 import Television from './television/Television'
 import TelevisionLayout from './television/TelevisionLayout'
 import LazyMonsterSwap from './shared/MonsterSwap/MonsterSwap'
+import Section1 from '../scenes/Welcome/Section1.jsx'
+import ProgressBar from '../components/shared/ScrollAnimation'
 
-const LazyBubblingTowerAndMoon = lazy(() => 
-    import('../scenes/BubblingTowerAndMoon/BubblingTowerAndMoon')
+const LazyBubblingTowerAndMoon = lazy(() =>
+  import('../scenes/BubblingTowerAndMoon/BubblingTowerAndMoon')
 )
-const LazyMonsters = lazy(() => 
-    import('../components/shared/MonsterSVGs')
+const LazyMonsters = lazy(() =>
+  import('../components/shared/MonsterSVGs')
 )
 
 const Transition = ({ children }) => {
@@ -72,91 +74,91 @@ function KinkyTowersRoot() {
   return (
     <PageLayout setIsLoading={setIsLoading}>
       {/* <Theatre isLoading={isLoading} setIsLoading={setIsLoading}> */}
-        <AnimatePresence exitBeforeEnter>
-          <Routes location={location} key={location.pathname}>
-            {/* choose a show */}
-            <Route
-              path='/'
-              element={
-                <Transition>
-                  <Welcome />
-                </Transition>
-              }
-            />
-            <Route
-              path='kinkytower-1'
-              element={
-                <Transition>
-                  <KinkyTower1 />
-                </Transition>
-              }
-            />
-            <Route
-              path='titmouse-flight'
-              element={
-                <Transition>
-                  <TitmouseFlight />
-                </Transition>
-              }
-            />
-            <Route
-              path='kinkytower-2'
-              element={
-                <Transition>
-                  <KinkyTower2 />
-                </Transition>
-              }
-            />
-            <Route
-              path='kinkytowers-1'
-              element={
-                <Transition>
-                  <LazyBubblingTowerAndMoon />
-                </Transition>
-              }
-            />
-            <Route
-              path='evil-beast'
-              element={
-                <Transition>
-                  <EvilBeast />
-                </Transition>
-              }
-            />
-            <Route
-              path='monsters'
-              element={
-                <Transition>
-                  <LazyMonsters />
-                </Transition>
-              }
-            />
-            <Route
-              path='hot-cup-of-tit-tea'
-              element={
-                <Transition>
-                  <HotCupOfTitTea />
-                </Transition>
-              }
-            />
-            <Route
-              path='television'
-              element={
-                <Transition>
-                  <TelevisionLayout />
-                </Transition>
-              }
-            />
-            <Route
-              path='*'
-              element={
-                <main style={{ padding: '1rem' }}>
-                  <p>The Tower has fallen!</p>
-                </main>
-              }
-            />
-          </Routes>
-        </AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          {/* choose a show */}
+          <Route
+            path='/'
+            element={
+              <Transition>
+                <Welcome />
+              </Transition>
+            }
+          />
+          <Route
+            path='kinkytower-1'
+            element={
+              <Transition>
+                <KinkyTower1 />
+              </Transition>
+            }
+          />
+          <Route
+            path='titmouse-flight'
+            element={
+              <Transition>
+                <TitmouseFlight />
+              </Transition>
+            }
+          />
+          <Route
+            path='kinkytower-2'
+            element={
+              <Transition>
+                <KinkyTower2 />
+              </Transition>
+            }
+          />
+          <Route
+            path='kinkytowers-1'
+            element={
+              <Transition>
+                <LazyBubblingTowerAndMoon />
+              </Transition>
+            }
+          />
+          <Route
+            path='evil-beast'
+            element={
+              <Transition>
+                <EvilBeast />
+              </Transition>
+            }
+          />
+          <Route
+            path='monsters'
+            element={
+              <Transition>
+                <LazyMonsters />
+              </Transition>
+            }
+          />
+          <Route
+            path='hot-cup-of-tit-tea'
+            element={
+              <Transition>
+                <HotCupOfTitTea />
+              </Transition>
+            }
+          />
+          <Route
+            path='television'
+            element={
+              <Transition>
+                <TelevisionLayout />
+              </Transition>
+            }
+          />
+          <Route
+            path='*'
+            element={
+              <main style={{ padding: '1rem' }}>
+                <p>The Tower has fallen!</p>
+              </main>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
       {/* </Theatre> */}
     </PageLayout>
   )

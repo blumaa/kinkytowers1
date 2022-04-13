@@ -6,6 +6,7 @@ const Drawer = ({ setIsDrawerOpen, setIsloading }) => {
     <div className="Drawer">
       <Link onClick={()=>setIsDrawerOpen(false)} to='/'>Home</Link>
       {/* <Link to='/kinkytower-1'>KinkyTower1</Link> */}
+      {/* <Link onClick={()=>setIsDrawerOpen(false)} to='/parallax'>Section1</Link> */}
       <Link onClick={()=>setIsDrawerOpen(false)} to='/television'>Television</Link>
       <Link onClick={()=>setIsDrawerOpen(false)} to='/kinkytower-2'>Big Titmouse</Link>
       <Link onClick={()=>setIsDrawerOpen(false)} to='/titmouse-flight'>Titmouse Flight</Link>

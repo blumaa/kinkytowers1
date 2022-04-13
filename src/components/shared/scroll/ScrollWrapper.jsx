@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 const ScrollWrapper = ({ children, style, inView, ...props }) => {
   return (
     <div {...props} className='ScrollWrapper'>
-      {/* <Status inView={inView} /> */}
+      <Status inView={inView} />
       {children}
     </div>
   );

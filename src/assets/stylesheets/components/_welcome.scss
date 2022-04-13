@@ -2,7 +2,10 @@
     /* border: 1px solid yellow; */
     height: 100%;
     flex: 1 1 auto;
-    overflow-y: auto;
+  background-image: url('../../assets/images/cosmicBg1.jpg');
+  background-repeat: repeat;
+  background-size: 100%;
+    /* overflow-y: auto; */
     /* width: 50%; */
     /* width: 50%; */
     /* background-color:red; */
@@ -19,11 +22,17 @@
       flex-direction:column;
       align-items:center;
     }
-    &__inside-top{
-      /* height: 25%; */
-      width: 100%;
+    &__top-scroll-down{
+      /* display: flex; */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: "1px solid red";
+      // backgroundColor: "#2d1176",
+      /* color: "#fff"; */
+      height: 101vh;
       background-color:purple;
-      overflow:hidden;
+
     }
     &__inside-top-1{
       /* display: flex; */
@@ -37,7 +46,7 @@
     &__inside-middle{
       /* height: 50%; */
       overflow:hidden;
-      width: 100%;
+      /* width: 100%; */
       background-color: red;
     }
     &__inside-middle-1{
@@ -62,15 +71,3 @@
     display: none;
 }
 
-.Section{
-  height: "101vh";
-  // textAlign: "center";
-  display: "flex";
-  flex-direction: "column";
-  align-items: "center";
-  justify-content: "center";
-  background-color: "#2d1176";
-  color: "#fff";
-  /* border: 1px solid red; */
-
-}
