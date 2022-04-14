@@ -6,7 +6,7 @@ import {
   useSpring
 } from "framer-motion";
 
-const Parallax = ({ children, offset = 0 }) => {
+const Parallax = ({ children, zIndex = 0, offset = 50 }) => {
   const [elementTop, setElementTop] = React.useState(100);
   const [clientHeight, setClientHeight] = React.useState(0);
   const ref = React.useRef(null);
@@ -41,7 +41,7 @@ const Parallax = ({ children, offset = 0 }) => {
   // const y = useTransform(scrollY, [100, 200], [0, 500]);
 
   return (
-    <motion.div ref={ref} style={{ y: y }}>
+    <motion.div ref={ref} style={{ y: y, zIndex: zIndex }}>
       {children}
     </motion.div>
   );

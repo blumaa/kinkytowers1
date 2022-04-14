@@ -7,8 +7,9 @@ import { useInView } from "react-intersection-observer";
 import LittleBeast from '../../assets/stylesheets/animations/LittleBeast'
 import LittleTitmouse from '../../assets/stylesheets/animations/LittleTitmouse'
 import Section from '../../components/shared/scroll/Section'
-import Section1 from './Section1'
 import Parallax from './Parallax'
+import FloatingCircles from './FloatingCircles'
+import FloatingSquares from './FloatingSquares'
 
 const durationNum = 1
 
@@ -21,17 +22,19 @@ const defaultSectionStyle = {
   justifyContent: "center",
   // border: "1px solid red",
   // backgroundColor: "#2d1176",
+  // overflow: "auto",
   color: "#fff"
 };
 
 const defaultSectionStyleBottom = {
-  height: "101vh",
+  height: "100vh",
+  width: "99vw",
   // textAlign: "center",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "flex-end",
-  // backgroundColor: "#2d1176",
+  justifyContent: "center",
+  backgroundColor: "#2d1176",
   color: "#fff"
 };
 
@@ -66,7 +69,7 @@ const bottomSectionVariants = {
     scale: 1.1,
     y: -2,
   },
-  initial: { opacity: 1, scale: 1, y: 0 },
+  initial: { opacity: 0, scale: 1, y: 0 },
 };
 
 const titleVariants = {
@@ -161,80 +164,85 @@ const Welcome = () => {
 
 
   return <div className='Welcome'>
-    <ScrollWrapper inView={inViewBeast}>
-      <Wrapper >
-        <Section
-          ref={topRef}
-          // style={defaultSectionStyle}
-          style={{ ...defaultSectionStyle, height: "30rem" }}
-          variants={sectionVariants}
-          animate={sectionControls}
-          transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+    {/* <ScrollWrapper inView={inViewBeast}> */}
+    {/* <Wrapper > */}
+    {/* <FloatingCircles /> */}
+    <FloatingSquares />
+    <Section
+      ref={topRef}
+      // style={defaultSectionStyle}
+      style={{ ...defaultSectionStyle }}
+      variants={sectionVariants}
+      animate={sectionControls}
+      transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+    >
+      ⬇ Welcome to Kinky Towers ⬇
+    </Section>
+    <Section
+      // ref={titleRef}
+      // style={{ height: "10rem", border: "1px solid red" }}
+      style={{ ...defaultSectionStyle }}
+    // variants={titleVariants}
+    // animate={titleControls}
+    >
+      <Parallax offset={200}>
+        If you scroll down, watch out for animals
+      </Parallax>
+    </Section>
+    {/* <Section */}
+    {/*   ref={titleRef} */}
+    {/*   // style={{ height: "10rem", border: "1px solid red" }} */}
+    {/*   style={{ ...defaultSectionStyle, height: "10rem" }} */}
+    {/*   variants={titleVariants} */}
+    {/*   animate={titleControls}> */}
+    {/*   If you scroll down, watch out for animals */}
+    {/* </Section> */}
+    {/* <section style={{ height: '50vh' }}> */}
+    <FloatingCircles height="50vh" />
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: "center" }}>
+      <Parallax offset={50} zIndex={100}>
+        <motion.div
+          ref={titRef}
+          animate={titControls}
+          initial="initial"
+          variants={titVariants}
+          style={{ height: "15vh" }}
         >
-          ⬇ Welcome to Kinky Towers ⬇
-        </Section>
-        <Section
-          // ref={titleRef}
-          // style={{ height: "10rem", border: "1px solid red" }}
-          style={{ ...defaultSectionStyle, height: "20rem" }}
-        // variants={titleVariants}
-        // animate={titleControls}
+          <LittleTitmouse />
+        </motion.div>
+      </Parallax>
+      <Parallax offset={100}>
+        <motion.div
+          ref={beastRef}
+          animate={beastControls}
+          initial="initial"
+          variants={beastVariants}
+          style={{ height: "25vh" }}
         >
-          <Parallax offset={200}>
-            If you scroll down, watch out for animals
-          </Parallax>
-        </Section>
-        {/* <Section */}
-        {/*   ref={titleRef} */}
-        {/*   // style={{ height: "10rem", border: "1px solid red" }} */}
-        {/*   style={{ ...defaultSectionStyle, height: "10rem" }} */}
-        {/*   variants={titleVariants} */}
-        {/*   animate={titleControls}> */}
-        {/*   If you scroll down, watch out for animals */}
-        {/* </Section> */}
-        <section style={{ height: '50vh' }}>
-          <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: "center" }}>
-            <Parallax offset={50}>
-              <motion.div
-                ref={titRef}
-                animate={titControls}
-                initial="initial"
-                variants={titVariants}
-                style={{ height: "15vh" }}
-              >
-                <LittleTitmouse />
-              </motion.div>
-            </Parallax>
-            <Parallax offset={100}>
-              <motion.div
-                ref={beastRef}
-                animate={beastControls}
-                initial="initial"
-                variants={beastVariants}
-                style={{ height: "25vh" }}
-              >
-                <LittleBeast />
-              </motion.div>
-            </Parallax>
-          </div>
-        </section>
-        <div style={{ height: "101vh" }}>
-          <div style={{ width: "25px", height: "25px", backgroundColor: "blue" }} />
-          <Section1>
-            <div style={{ width: "25px", height: "25px", backgroundColor: "white" }} />
-          </Section1>
-        </div>
-        <Section
-          ref={bottomRef}
-          style={defaultSectionStyleBottom}
-          variants={bottomSectionVariants}
-          animate={bottomSectionControls}
-          transition={{ duration: .5, repeat: Infinity, repeatType: 'reverse', originY: 0 }}
-        >
-          ⬆︎ Scroll up ⬆︎
-        </Section>
-      </Wrapper>
-    </ScrollWrapper>
+          <LittleBeast />
+        </motion.div>
+      </Parallax>
+    </div>
+    {/* </section> */}
+    {/* <div style={{ height: "101vh" }}> */}
+    {/* <div style={{ width: "25px", height: "25px", backgroundColor: "blue" }} /> */}
+    {/* <Parallax offset={100}> */}
+    {/*   ⬇ Welcome to Kinky Towers ⬇ */}
+    {/* </Parallax> */}
+    {/* <div style={{ width: "25px", height: "25px", backgroundColor: "white" }} /> */}
+    {/* </Section1> */}
+    {/* </div> */}
+    <Section
+      ref={bottomRef}
+      style={defaultSectionStyleBottom}
+      variants={bottomSectionVariants}
+      animate={bottomSectionControls}
+      transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse', originY: 0 }}
+    >
+      ⬆︎ Scroll up ⬆︎
+    </Section>
+    {/* </Wrapper> */}
+    {/* </ScrollWrapper> */}
   </div>
 }
 

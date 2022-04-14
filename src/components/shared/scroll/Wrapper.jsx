@@ -1,7 +1,7 @@
 import * as React from "react";
 
 const sharedStyle = {
-  display: "flex",
+  // display: "flex",
   minHeight: "55vh",
   flexDirection: "column",
   justifyContent: "center",
@@ -9,7 +9,8 @@ const sharedStyle = {
   // textAlign: "center",
   // background: "#148bb4",
   // color: "azure",
-  // overflowX: "hidden",
+  overflowX: "hidden",
+  // overflowY: "hidden",
   // scrollbarWidth:'none',
 };
 

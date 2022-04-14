@@ -20,8 +20,9 @@ import PageLayout from './PageLayout'
 import Television from './television/Television'
 import TelevisionLayout from './television/TelevisionLayout'
 import LazyMonsterSwap from './shared/MonsterSwap/MonsterSwap'
-import Section1 from '../scenes/Welcome/Section1.jsx'
+import FloatingCircles from '../scenes/Welcome/FloatingCircles.jsx'
 import ProgressBar from '../components/shared/ScrollAnimation'
+import { FloatingIntro } from '../scenes/FloatingIntro'
 
 const LazyBubblingTowerAndMoon = lazy(() =>
   import('../scenes/BubblingTowerAndMoon/BubblingTowerAndMoon')
@@ -82,6 +83,7 @@ function KinkyTowersRoot() {
             element={
               <Transition>
                 <Welcome />
+                {/* <FloatingIntro /> */}
               </Transition>
             }
           />

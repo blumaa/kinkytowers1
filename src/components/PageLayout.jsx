@@ -27,7 +27,7 @@ const PageLayout = ({ children, setIsLoading }) => {
       animate={{ opacity: isDrawerOpen ? .2 : 1}}>
         {children}
       </motion.div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
