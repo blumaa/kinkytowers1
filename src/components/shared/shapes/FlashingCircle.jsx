@@ -1,5 +1,5 @@
 import React from 'react'
-import Parallax from '../Parallax'
+import Parallax from '../scroll/Parallax'
 
 import { motion } from 'framer-motion';
 

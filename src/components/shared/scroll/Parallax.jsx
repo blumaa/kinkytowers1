@@ -6,8 +6,8 @@ import {
   useSpring
 } from "framer-motion";
 
-const Parallax = ({ children, zIndex = 0, offset = 50 }) => {
-  const [elementTop, setElementTop] = React.useState(100);
+const Parallax = ({ children, zIndex, offset = 0, horizontal, diagonal }) => {
+  const [elementTop, setElementTop] = React.useState(0);
   const [clientHeight, setClientHeight] = React.useState(0);
   const ref = React.useRef(null);
   const { scrollY } = useViewportScroll();
@@ -29,7 +29,7 @@ const Parallax = ({ children, zIndex = 0, offset = 50 }) => {
       // get the offset relative to the viewport
       setElementTop(
         element.getBoundingClientRect().top + window.scrollY ||
-          window.pageYOffset
+        window.pageYOffset
       );
       setClientHeight(window.innerHeight);
     };
@@ -40,8 +40,34 @@ const Parallax = ({ children, zIndex = 0, offset = 50 }) => {
 
   // const y = useTransform(scrollY, [100, 200], [0, 500]);
 
+  const defaultStyle = {
+    y: y,
+    zIndex
+  }
+  const isHorizontal = (style) => {
+    if (horizontal) {
+      style = {
+        x: y,
+        zIndex
+      }
+    }
+    if (diagonal) {
+      style = {
+        x: y,
+        y: y,
+        zIndex
+      }
+    }
+
+    return style
+  }
   return (
-    <motion.div ref={ref} style={{ y: y, zIndex: zIndex }}>
+    <motion.div ref={ref} style={{
+      ...isHorizontal(defaultStyle),
+      display: 'flex',
+      justifyContent: "center",
+      // border: "1px solid yellow"
+    }}>
       {children}
     </motion.div>
   );

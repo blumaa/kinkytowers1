@@ -1,21 +1,19 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react'
 import { useSpring, useAnimation, motion, useViewportScroll, useTransform, useAnimationFrame, useElementScroll } from 'framer-motion'
-import { Icon1, Icon2, Icon3 } from '../../assets/images/monster-character-svgs2/index'
+import { Link } from 'react-router-dom'
 import ScrollWrapper from '../../components/shared/scroll/ScrollWrapper'
 import Wrapper from '../../components/shared/scroll/Wrapper'
 import { useInView } from "react-intersection-observer";
-import LittleBeast from '../../assets/stylesheets/animations/LittleBeast'
-import LittleTitmouse from '../../assets/stylesheets/animations/LittleTitmouse'
 import Section from '../../components/shared/scroll/Section'
-import Parallax from './Parallax'
-import FloatingCircles from './FloatingCircles'
-import FloatingSquares from './FloatingSquares'
-
+import { FloatingCircles, FloatingStars, FloatingSquares } from '../../components/shared/index'
+import { Scene1 as AboutKinkyTowers } from '../AboutKinkyTowers/index'
+import ACheekyTitmouseAndBeast from '../ACheekyTitmouseAndBeast/ACheekyTitmouseAndBeast'
+import { HotCupOfTitTea } from '../HotCupOfTitTea/index'
 const durationNum = 1
 
 const defaultSectionStyle = {
-  height: "101vh",
-  // textAlign: "center",
+  height: "100vh",
+  width: "95vw",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -23,18 +21,19 @@ const defaultSectionStyle = {
   // border: "1px solid red",
   // backgroundColor: "#2d1176",
   // overflow: "auto",
-  color: "#fff"
+  // color: "#fff"
 };
 
 const defaultSectionStyleBottom = {
   height: "100vh",
   width: "99vw",
   // textAlign: "center",
+  // overflowX: "hidden",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "#2d1176",
+  // backgroundColor: "#2d1176",
   color: "#fff"
 };
 
@@ -53,12 +52,12 @@ const titVariants = {
 const sectionVariants = {
   visible: {
     opacity: 1,
-    scale: 1.1,
+    // scale: 1.1,
     y: 20,
   },
   initial: {
     opacity: 0,
-    scale: 1,
+    // scale: 1,
     y: 0
   },
 };
@@ -77,7 +76,6 @@ const titleVariants = {
   initial: { opacity: 0, scale: 1, y: 100, transition: { duration: durationNum } },
   // exit: { opacity: 0, scale: 10000, transition: { duration: durationNum } }
 };
-
 
 const Welcome = () => {
   const beastControls = useAnimation();
@@ -129,21 +127,6 @@ const Welcome = () => {
     }
   }, [titleControls, inViewTitle]);
 
-  useEffect(() => {
-    if (inView2) {
-      titControls.start("visible");
-    } else {
-      titControls.start("initial")
-    }
-  }, [titControls, inView2]);
-
-  useEffect(() => {
-    if (inViewBeast) {
-      beastControls.start("visible");
-    } else {
-      beastControls.start("initial")
-    }
-  }, [beastControls, inViewBeast]);
 
   useEffect(() => {
     if (inViewTop) {
@@ -162,88 +145,53 @@ const Welcome = () => {
   }, [bottomSectionControls, inViewBottom]);
 
 
-
-  return <div className='Welcome'>
-    {/* <ScrollWrapper inView={inViewBeast}> */}
-    {/* <Wrapper > */}
-    {/* <FloatingCircles /> */}
-    <FloatingSquares />
-    <Section
-      ref={topRef}
-      // style={defaultSectionStyle}
-      style={{ ...defaultSectionStyle }}
-      variants={sectionVariants}
-      animate={sectionControls}
-      transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+  return (
+    <div
+      className="Welcome"
     >
-      ⬇ Welcome to Kinky Towers ⬇
-    </Section>
-    <Section
-      // ref={titleRef}
-      // style={{ height: "10rem", border: "1px solid red" }}
-      style={{ ...defaultSectionStyle }}
-    // variants={titleVariants}
-    // animate={titleControls}
-    >
-      <Parallax offset={200}>
-        If you scroll down, watch out for animals
-      </Parallax>
-    </Section>
-    {/* <Section */}
-    {/*   ref={titleRef} */}
-    {/*   // style={{ height: "10rem", border: "1px solid red" }} */}
-    {/*   style={{ ...defaultSectionStyle, height: "10rem" }} */}
-    {/*   variants={titleVariants} */}
-    {/*   animate={titleControls}> */}
-    {/*   If you scroll down, watch out for animals */}
-    {/* </Section> */}
-    {/* <section style={{ height: '50vh' }}> */}
-    <FloatingCircles height="50vh" />
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: "center" }}>
-      <Parallax offset={50} zIndex={100}>
-        <motion.div
-          ref={titRef}
-          animate={titControls}
-          initial="initial"
-          variants={titVariants}
-          style={{ height: "15vh" }}
-        >
-          <LittleTitmouse />
-        </motion.div>
-      </Parallax>
-      <Parallax offset={100}>
-        <motion.div
-          ref={beastRef}
-          animate={beastControls}
-          initial="initial"
-          variants={beastVariants}
-          style={{ height: "25vh" }}
-        >
-          <LittleBeast />
-        </motion.div>
-      </Parallax>
+      <FloatingSquares height="1vh" />
+      <FloatingStars height="3vh" />
+      {/* <FloatingCircles height="1vh" /> */}
+      <Section
+        ref={topRef}
+        style={{ ...defaultSectionStyle }}
+        variants={sectionVariants}
+        animate={sectionControls}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+      >
+        {/* <ParallaxHorizontal offset={-100} leftToRight> */}
+        <div className="Welcome__title">
+          ⬇ Welcome to Kinky Towers ⬇
+        </div>
+        {/* </ParallaxHorizontal> */}
+      </Section>
+      <FloatingCircles height="1vh" />
+      <Section
+        style={{ ...defaultSectionStyle }}
+      >
+        <AboutKinkyTowers />
+      </Section>
+      <Section>
+        <ACheekyTitmouseAndBeast />
+      </Section>
+      <Section>
+        <HotCupOfTitTea />
+      </Section>
+      <FloatingCircles />
+      <Section
+        ref={bottomRef}
+        style={defaultSectionStyleBottom}
+        variants={bottomSectionVariants}
+        animate={bottomSectionControls}
+        transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse', originY: 0 }}
+      >
+        <Link onClick={() => setIsDrawerOpen(false)} to='/kinkytowers-1'>Care to see the Tower?</Link>
+        {/* ⬆︎ Scroll up ⬆︎ */}
+      </Section>
     </div>
-    {/* </section> */}
-    {/* <div style={{ height: "101vh" }}> */}
-    {/* <div style={{ width: "25px", height: "25px", backgroundColor: "blue" }} /> */}
-    {/* <Parallax offset={100}> */}
-    {/*   ⬇ Welcome to Kinky Towers ⬇ */}
-    {/* </Parallax> */}
-    {/* <div style={{ width: "25px", height: "25px", backgroundColor: "white" }} /> */}
-    {/* </Section1> */}
-    {/* </div> */}
-    <Section
-      ref={bottomRef}
-      style={defaultSectionStyleBottom}
-      variants={bottomSectionVariants}
-      animate={bottomSectionControls}
-      transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse', originY: 0 }}
-    >
-      ⬆︎ Scroll up ⬆︎
-    </Section>
-    {/* </Wrapper> */}
-    {/* </ScrollWrapper> */}
-  </div>
+  )
+
 }
 
 export default Welcome
+

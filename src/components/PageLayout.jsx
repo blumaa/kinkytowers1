@@ -24,7 +24,9 @@ const PageLayout = ({ children, setIsLoading }) => {
         )}
       </AnimatePresence>
       <motion.div 
-      animate={{ opacity: isDrawerOpen ? .2 : 1}}>
+      animate={{ opacity: isDrawerOpen ? .2 : 1}} 
+        // style={{ overflowY: "auto"}}
+      >
         {children}
       </motion.div>
       {/* <Footer /> */}

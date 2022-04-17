@@ -1,68 +1,37 @@
   .Welcome {
-    /* border: 1px solid yellow; */
-    /* height: 100%; */
-    /* flex: 1 1 auto; */
-  /* background-image: url('../../assets/images/cosmicBg1.jpg'); */
-  background-repeat: repeat;
-  background-size: 100%;
-    /* width: 50%; */
-    /* width: 50%; */
-    /* background-color:red; */
-  /* padding: 10px; */
-  /* background-color: red; */
-  /* height: 100%; */
-    &__inside{
-    border: 1px solid red;
-      height: 1500px;
-      background-color:green;
-      display: flex;
-      grid-row: auto auto auto;
-      justify-content: space-around;
-      flex-direction:column;
+    /* height: 200vh; */
+    /* overflow-y: auto; */
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    &__title{
+      display:  flex;
+      justify-content:center;
       align-items:center;
-    }
-    &__top-scroll-down{
-      /* display: flex; */
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: "1px solid red";
-      // backgroundColor: "#2d1176",
-      /* color: "#fff"; */
-      height: 101vh;
-      background-color:purple;
+      width: 50vw;
+      border: 5px solid red;
+      padding: 2rem;
+      border-radius:2rem;
+      box-shadow:  10px 10px 5px 0px #8a0000;
+      background-color: #140b34;
+      color: lightgray;
 
     }
-    &__inside-top-1{
-      /* display: flex; */
-      /* justify-content:center; */
-      /* flex-direction:column; */
-      /* align-items:center; */
-      /* height: 100%; */
-      /* width: 100%; */
-      /* background-color:white; */
-    }
-    &__inside-middle{
-      /* height: 50%; */
-      overflow:hidden;
-      /* width: 100%; */
-      background-color: red;
-    }
-    &__inside-middle-1{
-      /* height: 30%; */
-      /* width: 20%; */
-      /* background-color: white; */
-    }
-    &__inside-bottom{
-      /* height: 25%; */
-      width: 100%;
-      background-color: yellow;
-      overflow:hidden;
-    }
-    &__inside-bottom-1{
-      /* height: 30%; */
-      /* width: 20%; */
-      /* background-color: white; */
+    &__subtitle-1{
+      display:  flex;
+      justify-content:center;
+      align-items:center;
+      width: 15rem;
+      height: auto;
+      background-color: black;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-right: 3rem;
+      padding-left: 3rem;
+      border: 3px solid white;
+      border-radius: 1rem;
     }
   }
 

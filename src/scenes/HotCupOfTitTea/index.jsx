@@ -1,1 +1,3 @@
-export { default as HotCupOfTitTea } from "./HotCupOfTitTea.jsx";
+import HotCupOfTitTea from "./HotCupOfTitTea.jsx";
+
+export { HotCupOfTitTea }

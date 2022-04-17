@@ -1,0 +1,448 @@
+const randomColour = () => Math.floor(Math.random() * 16777215).toString(16);
+// const randomColour = () => "fff" 
+const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+const minOffset = 50 
+const maxOffset = 1500 
+
+const squareArray = [
+  {
+    id: 1,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 2,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 3,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 4,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 5,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 6,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 7,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 8,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 9,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 10,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 11,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 12,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 13,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 14,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 15,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 16,
+    fill: randomColour(),
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 17,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 18,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 19,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 20,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 21,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 22,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 23,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 24,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+]
+
+const circleArray = [
+  {
+    id: 1,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 2,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 3,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 4,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 5,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 6,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 7,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 8,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 9,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 10,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 11,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 12,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 13,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 14,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 15,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 16,
+    fill: randomColour(),
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 17,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 18,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 19,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 20,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 21,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 22,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 23,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 24,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+]
+
+const starArray = [
+  {
+    id: 1,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 2,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 3,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 4,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 5,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 6,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 7,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 8,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 9,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 10,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 11,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 12,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 13,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 14,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 15,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 16,
+    fill: randomColour(),
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 17,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 18,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 19,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 20,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 21,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 22,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 23,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+  {
+    id: 24,
+    offset: randomIntFromInterval(minOffset, maxOffset),
+    fill: randomColour(),
+    flashDuration: Math.random(),
+  },
+]
+
+export { circleArray, squareArray, starArray } 
