@@ -17,7 +17,7 @@ const [ isDragging, setIsDragging ] = React.useState(false)
   console.log('handle grab', handleGrab)
 return(
   <motion.svg
-    initial={{ x: -200}}
+    initial={{ x: -155}}
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 876.76 785"

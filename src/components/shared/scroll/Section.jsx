@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const defaultSectionStyle = {
   height: "101vh",
-  width: "95vw",
+  // width: "95vw",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

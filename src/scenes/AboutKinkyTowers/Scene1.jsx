@@ -11,7 +11,7 @@ const Scene1 = () => {
       <div className="Scene1__top">
         <div className="Scene1__top-left">
       <div className="PausePlayWrapper">
-        <div className="PausePlayButton">
+        <div className="PausePlay">
           <PausePlay />
         </div>
       </div>
