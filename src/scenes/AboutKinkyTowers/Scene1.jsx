@@ -3,12 +3,18 @@ import BlobWave from './BlobWave'
 import FlyingTit from "../../assets/animations/FlyingTit"
 import { motion } from 'framer-motion'
 import Parallax from '../../components/shared/scroll/Parallax'
+import PausePlay from './BoatScene/PausePlay' 
 
 const Scene1 = () => {
   return (
     <div className="Scene1">
       <div className="Scene1__top">
         <div className="Scene1__top-left">
+      <div className="PausePlayWrapper">
+        <div className="PausePlayButton">
+          <PausePlay />
+        </div>
+      </div>
         <Parallax offset={300}>
          <div className="Scene1__top-left-text" >
             Welcome. <br /><br />
@@ -22,7 +28,7 @@ const Scene1 = () => {
       </div>
         <Parallax offset={300} horizontal>
         <motion.div className="Scene1__top-right"
-          animate={{ y: 400, originX: .5, originY: .5 }}
+          animate={{ y: 400, scale: [1.1, .9  ], originX: .5, originY: .5 }}
           transition={{ duration:3, repeat: Infinity, repeatType: "reverse"}}
           >
             <FlyingTit />

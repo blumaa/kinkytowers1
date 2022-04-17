@@ -9,20 +9,6 @@ import { FloatingCircles, FloatingStars, FloatingSquares } from '../../component
 import { Scene1 as AboutKinkyTowers } from '../AboutKinkyTowers/index'
 import ACheekyTitmouseAndBeast from '../ACheekyTitmouseAndBeast/ACheekyTitmouseAndBeast'
 import { HotCupOfTitTea } from '../HotCupOfTitTea/index'
-const durationNum = 1
-
-const defaultSectionStyle = {
-  height: "100vh",
-  width: "95vw",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  // border: "1px solid red",
-  // backgroundColor: "#2d1176",
-  // overflow: "auto",
-  // color: "#fff"
-};
 
 const defaultSectionStyleBottom = {
   height: "100vh",
@@ -37,17 +23,6 @@ const defaultSectionStyleBottom = {
   color: "#fff"
 };
 
-const beastVariants = {
-  visible: { opacity: 1, x: 0, transition: { duration: durationNum } },
-  initial: { opacity: 0, x: 400, transition: { duration: durationNum } },
-  // exit: { opacity: 0, x: -400, transition: { duration: durationNum } }
-};
-
-const titVariants = {
-  visible: { opacity: 1, x: 0, transition: { duration: durationNum } },
-  initial: { opacity: 0, x: -400, transition: { duration: durationNum } },
-  exit: { opacity: 0, x: 400, transition: { duration: durationNum } }
-};
 
 const sectionVariants = {
   visible: {
@@ -71,15 +46,8 @@ const bottomSectionVariants = {
   initial: { opacity: 0, scale: 1, y: 0 },
 };
 
-const titleVariants = {
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: durationNum } },
-  initial: { opacity: 0, scale: 1, y: 100, transition: { duration: durationNum } },
-  // exit: { opacity: 0, scale: 10000, transition: { duration: durationNum } }
-};
 
 const Welcome = () => {
-  const beastControls = useAnimation();
-  const titControls = useAnimation();
   const titleControls = useAnimation();
   const sectionControls = useAnimation();
   const bottomSectionControls = useAnimation();
@@ -104,19 +72,10 @@ const Welcome = () => {
     threshold: 1,
     rootMargin: "5%"
   })
-  const [beastRef, inViewBeast] = useInView({
-    threshold: 1,
-    // rootMargin: "500px 0px 500px 0px",
-  })
-  const [titRef, inView2] = useInView({
-    threshold: 1,
-    // rootMargin: "500px 0px 500px 0px"
-  })
   const [titleRef, inViewTitle] = useInView({
     threshold: 1,
     // rootMargin: "500px 0px 500px 0px"
   })
-
 
 
   useEffect(() => {
@@ -149,12 +108,12 @@ const Welcome = () => {
     <div
       className="Welcome"
     >
-      <FloatingSquares height="1vh" />
-      <FloatingStars height="3vh" />
-      {/* <FloatingCircles height="1vh" /> */}
+      {/* <FloatingSquares height="1vh" /> */}
+      {/* <FloatingStars height="3vh" /> */}
+      <FloatingCircles height="1vh" />
       <Section
         ref={topRef}
-        style={{ ...defaultSectionStyle }}
+        // style={{ ...defaultSectionStyle }}
         variants={sectionVariants}
         animate={sectionControls}
         transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
@@ -165,10 +124,8 @@ const Welcome = () => {
         </div>
         {/* </ParallaxHorizontal> */}
       </Section>
-      <FloatingCircles height="1vh" />
-      <Section
-        style={{ ...defaultSectionStyle }}
-      >
+      <Section>
+      {/* <FloatingCircles height="1vh" /> */}
         <AboutKinkyTowers />
       </Section>
       <Section>

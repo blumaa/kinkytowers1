@@ -31,8 +31,8 @@ const beastVariants = {
 };
 
 const titVariants = {
-  visible: { opacity: 1, x: 0, transition: { duration: durationNum } },
-  initial: { opacity: 0, x: -400, transition: { duration: durationNum } },
+  visible: { opacity: 1, x: 0, y: [ -3, 0, 0, -3, 0, -2, 0, -2, 0, 0, -2, 0, -9, 0, 0, -5, 0, 0, -2, 0, -3 ,0, -4, 0, 0 ], transition: { duration: 3 } },
+  initial: { opacity: 1, x: -400, transition: { duration: 3 } },
   exit: { opacity: 0, x: 400, transition: { duration: durationNum } }
 };
 
@@ -42,7 +42,7 @@ const ACheekyTitmouseAndBeast = () => {
 
   const [beastRef, inViewBeast] = useInView({
     threshold: .1,
-    rootMargin: "-400px 0px -400px 0px",
+    // rootMargin: "-100px 0px -400px 0px",
   })
 
   const [titRef, inViewTit] = useInView({
@@ -74,7 +74,7 @@ const ACheekyTitmouseAndBeast = () => {
           Look! A cheeky little Titmouse! And a ravenous Beast!
         </div>
       </Parallax>
-      <FloatingSquares height="1vh" />
+      {/* <FloatingSquares height="1vh" /> */}
       <div style={{
         display: 'flex', justifyContent: 'center', alignItems: "center",
         // border: "1px solid yellow"
