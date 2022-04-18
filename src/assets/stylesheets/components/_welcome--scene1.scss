@@ -6,7 +6,7 @@
   /* background-size: cover; */
   /* height: 100vh; */
   /* width: 100vw; */
-  border: 2px solid red;
+  /* border: 2px solid red; */
   /* display: flex; */
   /* justify-content:space-between; */
   flex-direction:column;
@@ -59,16 +59,18 @@
   /* border: 5px solid red; */
 }
 
-.PausePlayButton{
-  overflow-x: hidden;
-  border: 5px solid green;
-  /* position: absolute; */
+.PausePlay{
+  /* overflow-x: hidden; */
+  /* border: 5px solid green; */
   /* float: left; */
   /* background-color:black; */
   /* width:calc(100vw - 500px); */
   svg{
     position: absolute;
-    height: 10rem;
+    bottom: 400px;
+    left: -4.75rem;
+    /* left: 0px; */
+    height: 5rem;
     z-index:1000;
   }
 }

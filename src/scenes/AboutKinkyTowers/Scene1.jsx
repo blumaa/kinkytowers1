@@ -6,13 +6,16 @@ import Parallax from '../../components/shared/scroll/Parallax'
 import PausePlay from './BoatScene/PausePlay' 
 
 const Scene1 = () => {
+  const [ isPlaying, setIsPlaying ] = React.useState(false)
+
+  // console.log('isPlaying', isPlaying)
   return (
     <div className="Scene1">
       <div className="Scene1__top">
         <div className="Scene1__top-left">
       <div className="PausePlayWrapper">
         <div className="PausePlay">
-          <PausePlay />
+          <PausePlay isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
         </div>
       </div>
         <Parallax offset={300}>
@@ -36,7 +39,7 @@ const Scene1 = () => {
         </Parallax>
       </div>
       <div className="Scene1__bottom">
-        <BlobWave />
+        <BlobWave isPlaying={isPlaying}/>
       </div>
     </div>
   )

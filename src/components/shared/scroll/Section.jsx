@@ -8,6 +8,7 @@ const defaultSectionStyle = {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+  position: "relative",
   // border: "5px solid red",
   // padding: "2rem",
   // borderRadius: "2rem",
