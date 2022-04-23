@@ -1,1 +1,3 @@
-export { default as TitmouseFlight } from "./TitmouseFlight.jsx";
+import TitmouseFlightWrapper from "./TitmouseFlightWrapper.jsx";
+
+export { TitmouseFlightWrapper }

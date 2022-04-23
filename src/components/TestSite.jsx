@@ -7,22 +7,24 @@ import { Scene1 as AboutKinkyTowers } from '../scenes/AboutKinkyTowers/index'
 import ACheekyTitmouseAndBeast from '../scenes/ACheekyTitmouseAndBeast/ACheekyTitmouseAndBeast'
 import Section from '../components/shared/scroll/Section'
 import Dial from './testSite/Dial'
+import BeaverMoonLoader from '../components/shared/spinners/BeaverMoonLoader'
 
 const TestSite = () => {
   return (
     <div className="TestSite" style={{
-      height: "200vh",
+      height: "100vh",
       // border: "1px solid yellow",
       // overflowY: "auto",
       display: "flex",
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <Section>
+      <BeaverMoonLoader />
+      {/* <Section> */}
         {/* <ACheekyTitmouseAndBeast /> */}
         {/* <Dial /> */}
-        <AboutKinkyTowers />
-      </Section>
+        {/* <AboutKinkyTowers /> */}
+      {/* </Section> */}
       {/* <Section > */}
       {/* </Section> */}
       {/* <Star /> */}
