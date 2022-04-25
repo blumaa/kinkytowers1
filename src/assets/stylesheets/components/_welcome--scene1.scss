@@ -1,5 +1,6 @@
 .Scene1{
   overflow-y: visible;
+  // overflow-x: hidden;
   /* background-image: url('../../assets/images/left.jpeg'); */
   /* background-image: url('../../assets/images/cosmicBg1.jpg'); */
   /* background-repeat: no-repeat; */
@@ -67,7 +68,7 @@
 }
 
 .PausePlay{
-  /* overflow-x: hidden; */
+   // overflow-x: hidden;
    // border: 5px solid green;
   /* float: left; */
   /* background-color:black; */
@@ -75,11 +76,13 @@
     position: absolute;
     bottom: 400px;
     right: -4.75rem;
+    // right: 0px;
     /* left: 0px; */
     height: 5rem;
     z-index:1000;
   svg{
     // position: absolute;
+   // overflow-x: hidden;
     // bottom: 400px;
     // right: -4.75rem;
     /* left: 0px; */

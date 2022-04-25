@@ -8,18 +8,21 @@ import ACheekyTitmouseAndBeast from '../scenes/ACheekyTitmouseAndBeast/ACheekyTi
 import Section from '../components/shared/scroll/Section'
 import Dial from './testSite/Dial'
 import BeaverMoonLoader from '../components/shared/spinners/BeaverMoonLoader'
+import Television from './television/Television2'
 
 const TestSite = () => {
   return (
     <div className="TestSite" style={{
       height: "100vh",
+      backgroundColor: "#320251",
       // border: "1px solid yellow",
       // overflowY: "auto",
       display: "flex",
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <BeaverMoonLoader />
+      <Television />
+      {/* <BeaverMoonLoader /> */}
       {/* <Section> */}
         {/* <ACheekyTitmouseAndBeast /> */}
         {/* <Dial /> */}
