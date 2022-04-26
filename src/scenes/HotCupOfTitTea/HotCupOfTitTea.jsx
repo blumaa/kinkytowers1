@@ -53,6 +53,7 @@ const HotCupOfTitTea = () => {
   return (
     <div className="TitTeaWrapper">
       <svg className="HotCupOfTitTea" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.25 191.53"
+        style={{ width: '100%'}}
         onClick={() => {
           setVisible((val) => !val);
         }}

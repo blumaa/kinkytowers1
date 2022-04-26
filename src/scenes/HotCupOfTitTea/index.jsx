@@ -1,3 +1,4 @@
 import HotCupOfTitTea from "./HotCupOfTitTea.jsx";
+import TitTeaStage from "./TitTeaStage.jsx";
 
-export { HotCupOfTitTea }
+export { HotCupOfTitTea, TitTeaStage }

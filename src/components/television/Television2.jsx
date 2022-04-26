@@ -2,6 +2,7 @@ import React, { lazy } from 'react'
 import { EvilBeast } from '../../scenes/EvilBeast/index'
 import LittleBeast from '../../assets/stylesheets/animations/LittleBeast'
 import LittleTitmouse from '../../assets/stylesheets/animations/LittleTitmouse'
+import { HotCupOfTitTea } from '../../scenes/HotCupOfTitTea/index'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 import TVFrame from './parts/TVFrame'
 import TVBackground from './parts/TVBackground'
@@ -14,6 +15,20 @@ const Television = () => {
       return <LittleBeast />
     } else if (channel === 2) {
       return <LittleTitmouse />
+    } else if (channel === 3) {
+      return (
+        <div
+          style={{
+            // border: '1px solid yellow',
+            width: '70%',
+            // display: 'flex',
+            // justifyContent: 'center',
+            // alignItems: 'center',
+          }}
+        >
+          <HotCupOfTitTea />
+        </div>
+      )
     }
   }
   return (
@@ -35,9 +50,10 @@ const Television = () => {
               exit={{ opacity: 0 }}
               transition={{
                 type: 'spring',
-                stiffness: 50,
-                damping: 0.8,
-                mass: 1,
+                bounce: .8,
+                // stiffness: 50,
+                // damping: 0.8,
+                // mass: 1,
               }}
               // style={{ backgroundColor: "orange"}}
               className='TelevisionLayout2__below'

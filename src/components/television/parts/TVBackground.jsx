@@ -33,9 +33,10 @@ const TVBackground = ({ power }) => {
         animate={backgroundControls}
         transition={{
           type: 'spring',
-          stiffness: 150,
-          damping: 2,
-          mass: 1,
+          bounce: .8
+          // stiffness: 150,
+          // damping: 2,
+          // mass: 1,
         }}
       />
     </svg>

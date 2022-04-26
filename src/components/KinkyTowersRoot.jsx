@@ -12,7 +12,7 @@ import KinkyTower2 from '../extras/KinkyTower2'
 import { Welcome } from '../scenes/Welcome/index'
 import { EvilBeast } from '../scenes/EvilBeast/index'
 import { TitmouseFlightWrapper } from '../scenes/FlyingTitmouseScene/index'
-import { HotCupOfTitTea } from '../scenes/HotCupOfTitTea/index'
+import { HotCupOfTitTea, TitTeaStage } from '../scenes/HotCupOfTitTea/index'
 // import KinkyTowers1 from './routes/KinkyTowers1'
 // import TitmouseFlight from '../routes/TitmouseFlight'
 import Theatre from '../components/theatre/index.js'
@@ -24,6 +24,9 @@ import FloatingCircles from '../components/shared/FloatingCircles'
 import ProgressBar from '../components/shared/ScrollAnimation'
 import { FloatingIntro } from '../scenes/FloatingIntro'
 import TestSite from './TestSite'
+const LazyFlight = lazy(() =>
+  import('../scenes/FlyingTitmouseScene/TitmouseFlightWrapper')
+)
 const LazyBubblingTowerAndMoon = lazy(() =>
   import('../scenes/BubblingTowerAndMoon/BubblingTowerAndMoon')
 )
@@ -57,23 +60,23 @@ function KinkyTowersRoot() {
   const location = useLocation()
   const [isLoading, setIsLoading] = React.useState(true)
 
-  React.useEffect(() => {
-    // Loading function to load data or
-    // fake it using setTimeout;
-    const loadData = async () => {
-      // Wait for two second
-      // await new Promise((r) => setTimeout(r, 2000));
-
-      // Toggle loading state
-      setIsLoading(() => true)
-
-      await new Promise((r) => setTimeout(r, 2000))
-
-      setIsLoading(() => false)
-    }
-
-    loadData()
-  }, [location])
+  // React.useEffect(() => {
+  //   // Loading function to load data or
+  //   // fake it using setTimeout;
+  //   const loadData = async () => {
+  //     // Wait for two second
+  //     // await new Promise((r) => setTimeout(r, 2000));
+  //
+  //     // Toggle loading state
+  //     setIsLoading(() => true)
+  //
+  //     await new Promise((r) => setTimeout(r, 1000))
+  //
+  //     setIsLoading(() => false)
+  //   }
+  //
+  //   loadData()
+  // }, [location])
 
   return (
     <PageLayout setIsLoading={setIsLoading}>
@@ -101,7 +104,8 @@ function KinkyTowersRoot() {
             path='titmouse-flight'
             element={
               <Transition>
-                <TitmouseFlightWrapper />
+                <LazyFlight />
+                {/* <TitmouseFlightWrapper /> */}
               </Transition>
             }
           />
@@ -141,7 +145,7 @@ function KinkyTowersRoot() {
             path='hot-cup-of-tit-tea'
             element={
               <Transition>
-                <HotCupOfTitTea />
+                <TitTeaStage />
               </Transition>
             }
           />
@@ -150,7 +154,6 @@ function KinkyTowersRoot() {
             element={
               <Transition>
               <LazyTelevision />
-                {/* <TelevisionLayout /> */}
               </Transition>
             }
           />

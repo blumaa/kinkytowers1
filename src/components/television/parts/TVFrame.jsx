@@ -9,7 +9,7 @@ const TVFrame = ({ channel, setChannel, power, setPower }) => {
   const powerButtonVariants = {
     visible: {
       fill: '#00F9FF',
-      opacity: 0.5,
+      opacity: 1,
       transition: { duration: 2 },
     },
     initial: {
@@ -69,8 +69,8 @@ const TVFrame = ({ channel, setChannel, power, setPower }) => {
         d='M354.16,159.78c-1.47-.37-36.85-8.94-132.29-8.94s-130.83,8.57-132,8.88c-25.86,5.71-43.13,22.9-49.95,49.76C39.51,211,30.93,246,30.93,315.74s8.58,104.78,9,106.43c7.22,26.42,23.43,42.62,49.65,49.52,1.46.37,36.85,8.94,132.29,8.94s130.82-8.57,131.92-8.86c24.62-5,41.9-22.12,50.07-49.78.37-1.47,8.94-36.56,8.94-106.26s-8.57-104.78-8.87-106C398.44,183.94,381.24,166.65,354.16,159.78Zm33,257.64C380.8,438.77,368.76,451,350,454.85c-.34.08-35.37,8.42-128.09,8.42s-127.75-8.34-128-8.39c-20.15-5.31-31.63-16.81-37.19-37.09-.08-.35-8.42-34.79-8.42-102.05s8.34-101.71,8.41-102C61.94,193.11,74,181,93.78,176.62c.34-.08,35.36-8.42,128.09-8.42s127.75,8.34,128,8.41c20.79,5.27,32.91,17.31,37.11,37.07.08.35,8.42,34.79,8.42,102.05S387.11,417.42,387.12,417.42Z'
         transform='translate(0 -22.8)'
         stroke='#000'
-        stroke-miterlimit='10'
-        stroke-width='2'
+        strokeMiterlimit='10'
+        strokeWidth='2'
       />
       <path
         d='M460.8,119.47H51.2A51.25,51.25,0,0,0,0,170.67V460.8A51.25,51.25,0,0,0,51.2,512H460.8A51.25,51.25,0,0,0,512,460.8V170.67A51.25,51.25,0,0,0,460.8,119.47ZM494.93,460.8a34.16,34.16,0,0,1-34.13,34.13H51.2A34.16,34.16,0,0,1,17.07,460.8V170.67A34.16,34.16,0,0,1,51.2,136.54H460.8a34.16,34.16,0,0,1,34.13,34.13Z'
@@ -86,18 +86,21 @@ const TVFrame = ({ channel, setChannel, power, setPower }) => {
           whileTap={{ scale: 0.9, transition: { duration: 0.5 } }}
           onClick={() => setPower(!power)}
         >
-          <motion.circle cx='452.3' cy='173.51' r='25.6'
+          <motion.circle
+            cx='452.3'
+            cy='173.51'
+            r='25.6'
             variants={powerButtonVariants}
             animate={powerButtonControls}
-            />
+          />
           <path
             d='M452.3,187.7a8.5,8.5,0,1,1-8.5,8.5A8.49,8.49,0,0,1,452.3,187.7Z'
             transform='translate(0 -22.79)'
             fill='#5f4600'
           />
         </motion.g>
-          <circle cx='452.3' cy='241.71' r='25.6' />
-          <circle cx='452.3' cy='241.81' r='8.5' fill='#5f4600' />
+        <circle cx='452.3' cy='241.71' r='25.6' />
+        <circle cx='452.3' cy='241.81' r='8.5' fill='#5f4600' />
       </g>
       <g>
         <path
@@ -116,7 +119,7 @@ const TVFrame = ({ channel, setChannel, power, setPower }) => {
           <path
             d='M469.59,341.34h-.08a8.57,8.57,0,1,0,.08,0Z'
             transform='translate(0 -22.8)'
-            fill={power && channel === 2 && activeChannel}
+            fill={power && channel === 2 ? activeChannel : '#000'}
           />
         </motion.g>
         <path
@@ -135,10 +138,21 @@ const TVFrame = ({ channel, setChannel, power, setPower }) => {
           d='M435.46,409.6h-.09a8.5,8.5,0,0,0-8.49,8.53,8.56,8.56,0,1,0,8.58-8.53Z'
           transform='translate(0 -22.8)'
         />
-        <path
-          d='M435.46,375.47h-.09a8.58,8.58,0,1,0,.09,0Z'
-          transform='translate(0 -22.8)'
-        />
+        <motion.g
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 0.5 },
+          }}
+          style={{ cursor: 'pointer' }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setChannel(3)}
+        >
+          <path
+            d='M435.46,375.47h-.09a8.58,8.58,0,1,0,.09,0Z'
+            transform='translate(0 -22.8)'
+            fill={power && channel === 3 ? activeChannel : '#000'}
+          />
+        </motion.g>
         <motion.g
           whileHover={{
             scale: 1.2,
@@ -151,7 +165,7 @@ const TVFrame = ({ channel, setChannel, power, setPower }) => {
           <path
             d='M435.46,341.34h-.09a8.58,8.58,0,1,0,.09,0Z'
             transform='translate(0 -22.8)'
-            fill={power && channel === 1 && activeChannel}
+            fill={power && channel === 1 ? activeChannel : '#000'}
           />
         </motion.g>
       </g>
