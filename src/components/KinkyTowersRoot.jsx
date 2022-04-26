@@ -30,6 +30,9 @@ const LazyBubblingTowerAndMoon = lazy(() =>
 const LazyMonsters = lazy(() =>
   import('../components/shared/MonsterSVGs')
 )
+const LazyTelevision = lazy(() =>
+  import('./television/TelevisionLayout')
+)
 
 const Transition = ({ children }) => {
   return (
@@ -42,7 +45,7 @@ const Transition = ({ children }) => {
       transition={{
         delay: 0,
         ease: 'easeOut',
-        duration: .5,
+        duration: .1,
       }}
     >
       {children}
@@ -146,7 +149,8 @@ function KinkyTowersRoot() {
             path='television'
             element={
               <Transition>
-                <TelevisionLayout />
+              <LazyTelevision />
+                {/* <TelevisionLayout /> */}
               </Transition>
             }
           />
