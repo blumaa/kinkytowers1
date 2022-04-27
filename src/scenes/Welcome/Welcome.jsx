@@ -32,6 +32,21 @@ const defaultSectionStyleBottom = {
   // backgroundColor: "#2d1176",
   color: '#fff',
 }
+const infoSection = {
+  height: '10vh',
+  width: '80vw',
+  border: '3px solid green',
+  padding: '10rem',
+  borderRadius: '5rem',
+  // textAlign: "center",
+  // overflowX: "hidden",
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: "#2d1176",
+  color: '#fff',
+}
 
 const sectionVariants = {
   visible: {
@@ -129,6 +144,10 @@ const Welcome = () => {
       {/* <Section> */}
       {/*   <HotCupOfTitTea /> */}
       {/* </Section> */}
+      <Section style={infoSection}>
+        You can now either scroll down, or navigate via the menu in the upper
+        left. Thanks for visiting and see you soon!
+      </Section>
       <Section
         ref={bottomRef}
         style={defaultSectionStyleBottom}
@@ -141,7 +160,11 @@ const Welcome = () => {
           originY: 0,
         }}
       >
-        <Link onClick={() => setIsDrawerOpen(false)} to='/kinkytowers-1' style={{ color: "white"}}>
+        <Link
+          onClick={() => setIsDrawerOpen(false)}
+          to='/kinkytowers-1'
+          style={{ color: 'white' }}
+        >
           Care to see the Tower?
         </Link>
       </Section>

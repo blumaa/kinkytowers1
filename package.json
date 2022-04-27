@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "array-move": "^3.0.1",
+    "firebase": "^9.6.11",
     "framer-motion": "^6.2.8",
     "gsap": "^3.10.2",
     "popmotion": "^11.0.3",
